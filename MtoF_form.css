@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+    padding: 5%;
+}
+
+.header-container{
+    padding-bottom: 5%;
+}
+
+.body-container{
+    padding: 0 20% ;
+}
+
+.form-container{
+    margin-bottom: 5%;
+    padding: 3%; 
+}
+
+.file-container{
+    margin-bottom: 5%;
+    padding-bottom: 3%;
+}
+
+.text-container{
+    margin-bottom: 5%;
+    padding: 8%; 
+}
