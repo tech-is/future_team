@@ -1,6 +1,12 @@
 body {
     text-align: center;
     padding: 5%;
+    background-color: #99CCFF;
+}
+
+h1{
+    font-family: 'Mansalva', cursive;
+    font-family: 'Fascinate Inline', cursive;
 }
 
 .header-container{
@@ -23,5 +29,6 @@ body {
 
 .text-container{
     margin-bottom: 5%;
-    padding: 8%; 
+    height: 130px; 
+    width: 100%;
 }
