@@ -1,3 +1,7 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -11,36 +15,34 @@
     <!-- google_fonts -->
     <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Mansalva&display=swap" rel="stylesheet">
-    <title>未来メーーーール</title>
+    <title>新規登録画面</title>
 </head>
 <body>
+    
     <div class="header-container">
-        <h1>Mail To The Future<h1>
+        <h1>Sign Up<h1>
     </div>
     <div class="body-container">
-        <form action="#" metod="post" enctype="multipart/form-data">
+        <form action="/MtoF_sign_up/add_information" method="post" enctype="multipart/form-data">
             <div class="form-group col-sm-12">
-                <p>届けたい未来</p>
-                <input class="form-control form-container" type="date" name="" value="" placeholder="1年後" required><br>
+                <p>名前</p>
+                <input class="form-control form-container" type="text" name="name" value="" placeholder="（例）山田太郎" required><br>
             </div>
             <div class="form-group col-sm-12">
-                <p>手紙を送る相手</p>
-                <input class="form-control form-container" type="text" name="" value="" required><br>
+                <p>メールアドレス</p>
+                <input class="form-control form-container" type="email" name="mail" value="" required><br>
             </div>
             <div class="form-group col-sm-12">
-                <p>手紙の内容</p>
-                <textarea class="text-container" type="" name="" value="" required></textarea><br>
+                <p>パスワード</p>
+                <input class="form-control form-container" type="password" name="pswd" value="" required><br>
             </div>
             <div class="form-group col-sm-12">
-                <p>写真を入れる</p>
-                <input class="form-control file-container" type="file" name="file" value=""><br>
+                <p>パスワードの確認</p>
+                <input class="form-control form-container" type="password" name="check_pswd" value="" required><br>
             </div>
             <div class="form-group col-sm-12">
-                <p>手紙を届けるメールアドレス</p>
-                <input class="form-control form-container" type="email" name="" value="" required><br>
-            </div>
-            <div class="form-group col-sm-12">
-                <input class="btn btn-outline-primary" type="submit" name="" value="送信" >
+                <input type="hidden" name="post_check" value="">
+                <input class="btn btn-outline-primary" type="submit" name="" value="登録" >
             </div>
         </form>
     </div>

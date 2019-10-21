@@ -10,6 +10,16 @@ class MtoF_form extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('MtoF_form');
+		$this->load->view('view_form');
+	}
+
+	public function view_sign_up()
+	{
+		$this->load->view('view_sign_up');
+	}
+
+	public function view_log_in()
+	{
+		$this->load->view('view_log_in');
 	}
 }
