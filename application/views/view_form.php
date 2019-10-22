@@ -1,7 +1,9 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-    // session開始
-    // session_start();
+    // sessionが開始していない場合sessionを開始する
+    if(!isset($_SESSION)){
+        session_start();
+    }
 ?>
 
 <!DOCTYPE html>

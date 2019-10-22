@@ -15,9 +15,16 @@ class MtoF_sign_up extends CI_Controller {
 
     public function add_information()
     {
-        if(isset($_POST['post_check'])){
-            $this->load->model('model_sign_up');
-            echo $check;
+        // ssesion_idとトークンが同じ場合処理をする
+        $token = $this->input->post('token');
+        if(session_id() === $token){
+            $this->load->model('Model_sign_up');
+            $this->load->helper('url');
+            // 書き込みメソッド実行
+            $this->Model_sign_up->model_sign_up_add();
+            redirect('/MtoF_form');
+        }else{
+            die('正規の画面からご使用下さい。');
         }
     }
 }
