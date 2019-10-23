@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class MtoF_form extends CI_Controller {
+class Form_ctrl extends CI_Controller {
 
 	public function __construct()
 	{
@@ -10,7 +10,7 @@ class MtoF_form extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('view_form');
+		$this->load->view('form_view');
 	}
 
 	public function view_sign_up()
