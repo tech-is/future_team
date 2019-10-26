@@ -16,9 +16,9 @@
         // DBに新規登録の情報を追加する
         function model_sign_up_add()
         {
-            $name =  $this->input->post('name',true);
-            $email = $this->input->post('mail',true);
-            $password = $this->input->post('pswd',true);
+            $name =  $this->input->post('name');
+            $email = $this->input->post('mail');
+            $password = $this->input->post('pswd');
             // $passwordをハッシュ化
             $hash = password_hash($password, PASSWORD_DEFAULT);
             try
@@ -28,27 +28,35 @@
                     'mail_address' => $email,
                     'password' => $hash
                 );
+                /*
+                $data = [
+                    'name' => $name,
+                    'mail_address' => $email,
+                    'password' => $hash
+                ];
+                */
                 // 重複のpasswordがあるか確認
-                $this->db->select('password');
-                $this->db->from('user_inf');
-                $get_password = $this->db->get();
-                if($email === $get_password){ ?>
-                    <script>
-                        alert('メールアドレスが重複しています。"\n"その他のメールアドレスをご登録ください。');
-                    </script><?php
-                    redirect('MtoF_sign_up');
+                $sql="SELECT * FROM user_inf WHERE mail_address=?";
+                $query=$this->db->query($sql,$email);
+                //もしクエリの行数が1件以上あればfalse
+                if($query->num_rows() > 0){
+                    return false;
                 }else{
-                    // DBに情報を追加
-                    $result = $this->db->insert('user_inf',$data);
-                    return $result;
+                    // それ以外は情報を追加する
+                    $this->db->insert('user_inf',$data);
+                    return true;
                 }
             }
-            catch(Exception $e) { ?>
+            catch(Exception $e) 
+            { 
+                ?>
                 <script>
                     alert('登録に失敗しました');
-                </script><?php
-                redirect('MtoF_sign_up');
+                    location.href="/MtoF_sign_up";
+                </script>
+                <?php
             }
         }
     }
+
 ?>

@@ -21,10 +21,27 @@ class MtoF_sign_up extends CI_Controller {
             $this->load->model('Model_sign_up');
             $this->load->helper('url');
             // 書き込みメソッド実行
-            $this->Model_sign_up->model_sign_up_add();
-            redirect('/MtoF_form');
+            $check = $this->Model_sign_up->model_sign_up_add();
+            if(!$check){ //$checkの中身がbool値であることを忘れないようにすること
+            //  if(!$check){
+            //  if(!false)
+
+            //  if($check === true)
+            //  if($chceck)
+            //  if(true)
+
+                ?><script>
+                alert('入力されたメールアドレスは、使用することができません。');
+                location.href="/MtoF_sign_up";
+                </script><?php
+            }else{
+                ?><script>
+                alert('登録完了しました。');
+                location.href="/MtoF_sign_up";
+                </script><?php
+                }
         }else{
-            die('正規の画面からご使用下さい。');
+            die('もう一度お試しください。');
         }
     }
 }

@@ -19,6 +19,8 @@
     <!-- google_fonts -->
     <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Mansalva&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>新規登録画面</title>
 </head>
 <body>
@@ -26,30 +28,32 @@
         <h1>Sign Up<h1>
     </div>
     <div class="body-container">
-        <form action="/MtoF_sign_up/add_information" method="post" enctype="multipart/form-data" onsubmit="return test(this);">
+        <form action="/MtoF_sign_up/add_information" method="post" onsubmit="return DoubleClick(this);">
             <div class="form-group col-sm-12">
                 <p>名前</p>
-                <input class="form-control form-container" type="text" name="name" value="" placeholder="（例）山田太郎" required><br>
+                <input class="form-control form-container" type="text" name="name" placeholder="(例)ヤマダタロウ" pattern="[ァ-ヶ]*" title="全角カナで入力してください" required><br>
             </div>
             <div class="form-group col-sm-12">
                 <p>メールアドレス</p>
-                <input class="form-control form-container" type="email" name="mail" value="" required><br>
+                <input class="form-control form-container" type="email" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
             </div>
             <div class="form-group col-sm-12">
                 <p>パスワード</p>
-                <input class="form-control form-container" type="password" name="pswd" value="" required><br>
+                <input class="form-control form-container" type="password" name="pswd" id="pswd" pattern="[A-Za-z]*{8}" title="半角英字8文字以上で入力してください" required><br>
             </div>
             <div class="form-group col-sm-12">
-                <p>パスワードの確認</p>
-                <input class="form-control form-container" type="password" name="check_pswd" value="" required><br>
+                <p>パスワードの確認<i class="fa fa-check-circle check_color" aria-hidden="true"></i></p>
+                <input class="form-control form-container" type="password" name="check_pswd" id="check_pswd" pattern="[A-Za-z]*{8}" title="半角英字8文字以上で入力してください" on="CheckPassword(this)" required>
+                <div class="error_text" id="error_text"></div>
             </div>
             <div class="form-group col-sm-12">
                 <!-- CSRF対策 「トークンの埋め込み」 -->
                 <input type="hidden" name="token" value="<?php echo session_id(); ?>">
-                <input class="btn btn-outline-primary" type="submit" name="" value="登録">
+                <input class="btn btn-outline-primary" type="submit" id="submit_push" value="登録">
             </div>
         </form>
     </div>
-    <script src="<?php echo base_url(); ?>assets/js/MtoF_sign_up.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/MtoF_sign_up_jquery.js"></script>
 </body>
 </html>
