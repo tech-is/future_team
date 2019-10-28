@@ -14,30 +14,13 @@
         }
 
         // DBに新規登録の情報を追加する
-        function model_sign_up_add()
+        function model_sign_up_add($data)
         {
-            $name =  $this->input->post('name');
-            $email = $this->input->post('mail');
-            $password = $this->input->post('pswd');
-            // $passwordをハッシュ化
-            $hash = password_hash($password, PASSWORD_DEFAULT);
             try
             {
-                $data = array(
-                    'name' => $name,
-                    'mail_address' => $email,
-                    'password' => $hash
-                );
-                /*
-                $data = [
-                    'name' => $name,
-                    'mail_address' => $email,
-                    'password' => $hash
-                ];
-                */
                 // 重複のpasswordがあるか確認
                 $sql="SELECT * FROM user_inf WHERE mail_address=?";
-                $query=$this->db->query($sql,$email);
+                $query=$this->db->query($sql,$data['mail_address']);
                 //もしクエリの行数が1件以上あればfalse
                 if($query->num_rows() > 0){
                     return false;

@@ -12,6 +12,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- token -->
+    <meta name="token-set" content="<?php echo $_SESSION['token']; ?>">
     <!-- bootstrap読み込み -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- css読み込み -->
@@ -31,11 +33,11 @@
         <form action="/MtoF_sign_up/add_information" method="post" onsubmit="return DoubleClick(this);">
             <div class="form-group col-sm-12">
                 <p>名前</p>
-                <input class="form-control form-container" type="text" name="name" placeholder="(例)ヤマダタロウ" pattern="[ァ-ヶ]*" title="全角カナで入力してください" required><br>
+                <input class="form-control form-container" type="text" name="name" id="name" placeholder="(例)ヤマダタロウ" pattern="[ァ-ヶ]*" title="全角カナで入力してください" required><br>
             </div>
             <div class="form-group col-sm-12">
                 <p>メールアドレス</p>
-                <input class="form-control form-container" type="email" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
+                <input class="form-control form-container" type="email" name="mail" id="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
             </div>
             <div class="form-group col-sm-12">
                 <p>パスワード</p>
@@ -48,12 +50,13 @@
             </div>
             <div class="form-group col-sm-12">
                 <!-- CSRF対策 「トークンの埋め込み」 -->
-                <input type="hidden" name="token" value="<?php echo session_id(); ?>">
+                <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
                 <input class="btn btn-outline-primary" type="submit" id="submit_push" value="登録">
             </div>
         </form>
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/MtoF_sign_up_jquery.js"></script>
+    <!-- <script type="text/javascript" src="assets/js/sign_up_ajax.js"></script> -->
 </body>
 </html>
