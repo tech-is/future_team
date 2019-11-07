@@ -1,0 +1,34 @@
+body {
+    text-align: center;
+    padding: 5%;
+    background-color: #99CCFF;
+}
+
+h1{
+    font-family: 'Mansalva', cursive;
+    font-family: 'Fascinate Inline', cursive;
+}
+
+.header-container{
+    padding-bottom: 5%;
+}
+
+.body-container{
+    padding: 0 20% ;
+}
+
+.form-container{
+    margin-bottom: 5%;
+    padding: 3%; 
+}
+
+.file-container{
+    margin-bottom: 5%;
+    padding-bottom: 3%;
+}
+
+.text-container{
+    margin-bottom: 5%;
+    height: 130px; 
+    width: 100%;
+}
