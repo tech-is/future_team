@@ -18,31 +18,35 @@
     <title>ログイン</title>
 </head>
 <body>
-    
+
     <div class="header-container">
         <h1>Log In<h1>
     </div>
+    <div style="text-align:right;">
+        <a href="<?php echo base_url(); ?>MtoF_sign_up/">新規登録</a>
+    </div>
     <div class="body-container">
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form id="form" onsubmit="return false;">
             <div class="form-group col-sm-12">
                 <p>名前</p>
-                <input class="form-control form-container" type="text" name="" value="" placeholder="（例）山田太郎" required><br>
+                <input class="form-control form-container" type="text" name="name" id="name" placeholder="(例)ヤマダタロウ" pattern="[ァ-ヶ]*" title="全角カナで入力してください" required><br>
             </div>
             <div class="form-group col-sm-12">
                 <p>メールアドレス</p>
-                <input class="form-control form-container" type="email" name="" value="" required><br>
+                <input class="form-control form-container" type="email" name="mail" id="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
             </div>
             <div class="form-group col-sm-12">
                 <p>パスワード</p>
-                <input class="form-control form-container" type="password" name="" value="" required><br>
+                <input class="form-control form-container" type="password" name="pswd" id="pswd" pattern="[A-Za-z]{8,}$" title="半角英字8文字以上で入力してください" required><br>
             </div>
             <div class="form-group col-sm-12">
-                <input class="btn btn-outline-primary" type="submit" name="" value="ログイン" >
+                <!-- CSRF対策 「トークンの埋め込み」 -->
+                <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token']; ?>"> 
+                <input class="btn btn-outline-primary" type="submit" value="ログイン" >
             </div>
         </form>
     </div>
-
-    <!-- bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src= "<?php echo base_url();?>assets/js/login_ajax.js"></script>
 </body>
 </html>

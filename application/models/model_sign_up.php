@@ -18,7 +18,7 @@
         {
             try
             {
-                // 重複のpasswordがあるか確認
+                // 重複のmail_addressがあるか確認
                 $sql="SELECT * FROM user_inf WHERE mail_address=?";
                 $query=$this->db->query($sql,$data['mail_address']);
                 //もしクエリの行数が1件以上あればfalse

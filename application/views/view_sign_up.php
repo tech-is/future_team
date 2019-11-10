@@ -1,9 +1,5 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-    // sessionが開始していない場合sessionを開始する
-    if(!isset($_SESSION)){
-        session_start();
-    }
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +26,7 @@
         <h1>Sign Up<h1>
     </div>
     <div class="body-container">
-        <form action="/MtoF_sign_up/add_information" method="post" onsubmit="return DoubleClick(this);">
+        <form action="#" id="submit_push" method="post" onsubmit="return false;">
             <div class="form-group col-sm-12">
                 <p>名前</p>
                 <input class="form-control form-container" type="text" name="name" id="name" placeholder="(例)ヤマダタロウ" pattern="[ァ-ヶ]*" title="全角カナで入力してください" required><br>
@@ -41,22 +37,22 @@
             </div>
             <div class="form-group col-sm-12">
                 <p>パスワード</p>
-                <input class="form-control form-container" type="password" name="pswd" id="pswd" pattern="[A-Za-z]*{8}" title="半角英字8文字以上で入力してください" required><br>
+                <input class="form-control form-container" type="password" name="pswd" id="pswd" pattern="[A-Za-z]{8,}$" title="半角英字8文字以上で入力してください" required><br>
             </div>
             <div class="form-group col-sm-12">
                 <p>パスワードの確認<i class="fa fa-check-circle check_color" aria-hidden="true"></i></p>
-                <input class="form-control form-container" type="password" name="check_pswd" id="check_pswd" pattern="[A-Za-z]*{8}" title="半角英字8文字以上で入力してください" on="CheckPassword(this)" required>
+                <input class="form-control form-container" type="password" name="check_pswd" id="check_pswd" pattern="[A-Za-z]{8,}$" title="半角英字8文字以上で入力してください" on="CheckPassword(this)" required>
                 <div class="error_text" id="error_text"></div>
             </div>
             <div class="form-group col-sm-12">
                 <!-- CSRF対策 「トークンの埋め込み」 -->
-                <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
-                <input class="btn btn-outline-primary" type="submit" id="submit_push" value="登録">
+                <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token']; ?>">
+                <input class="btn btn-outline-primary" type="submit"  value="登録">
             </div>
         </form>
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/MtoF_sign_up_jquery.js"></script>
-    <!-- <script type="text/javascript" src="assets/js/sign_up_ajax.js"></script> -->
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/sign_up_ajax.js"></script>
 </body>
 </html>
