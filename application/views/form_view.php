@@ -4,6 +4,7 @@
     if(!isset($_SESSION)){
         session_start();
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +24,8 @@
 </head>
 <body>
     <div style="text-align: right;">
-        <a href="<?php echo base_url(); ?>MtoF_sign_up/">新規登録</a><br>
-        <a href="<?php echo base_url(); ?>MtoF_log_in/">ログイン</a>
+        <a href="<?php echo base_url('MtoF_sign_up'); ?>">新規登録</a><br>
+        <a href="<?php echo base_url('MtoF_log_in'); ?>">ログイン</a>
     </div>
     <div class="header-container">
         <h1>Mail To The Future<h1>
