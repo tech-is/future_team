@@ -1,13 +1,10 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-<<<<<<< HEAD:application/views/form_view.php
     // sessionが開始していない場合sessionを開始する
     if(!isset($_SESSION)){
         session_start();
     }
 
-=======
->>>>>>> sign_up:application/views/view_form.php
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -26,11 +23,8 @@
 </head>
 <body>
     <div style="text-align: right;">
-<<<<<<< HEAD:application/views/form_view.php
         <a href="<?php echo base_url('MtoF_sign_up'); ?>">新規登録</a><br>
         <a href="<?php echo base_url('MtoF_log_in'); ?>">ログイン</a>
-=======
->>>>>>> sign_up:application/views/view_form.php
     </div>
     <div class="header-container">
         <h1>Mail To The Future<h1>
