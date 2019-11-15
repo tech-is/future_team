@@ -1,12 +1,14 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
+<<<<<<< HEAD:application/views/form_view.php
     // sessionが開始していない場合sessionを開始する
     if(!isset($_SESSION)){
         session_start();
     }
 
+=======
+>>>>>>> sign_up:application/views/view_form.php
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -24,8 +26,11 @@
 </head>
 <body>
     <div style="text-align: right;">
+<<<<<<< HEAD:application/views/form_view.php
         <a href="<?php echo base_url('MtoF_sign_up'); ?>">新規登録</a><br>
         <a href="<?php echo base_url('MtoF_log_in'); ?>">ログイン</a>
+=======
+>>>>>>> sign_up:application/views/view_form.php
     </div>
     <div class="header-container">
         <h1>Mail To The Future<h1>
@@ -34,19 +39,19 @@
         <form action="#" method="post" enctype="multipart/form-data">
             <div class="form-group col-sm-12">
                 <p>届けたい未来</p>
-                <input class="form-control form-container" type="date" name="" value="" placeholder="1年後" required><br>
+                <input class="form-control form-container" type="date" name="" value="" required><br>
             </div>
             <div class="form-group col-sm-12">
                 <p>手紙を送る相手</p>
-                <input class="form-control form-container" type="text" name="" value="" required><br>
+                <input class="form-control form-container" type="text" name="" value="" placeholder="１年後のぼくへ" required><br>
             </div>
             <div class="form-group col-sm-12">
                 <p>手紙の内容</p>
-                <textarea class="text-container" type="" name="" value="" required></textarea><br>
+                <textarea class="text-container" type="" name="" value="" placeholder="元気にしていますか" required></textarea><br>
             </div>
             <div class="form-group col-sm-12">
                 <p>写真を入れる</p>
-                <input class="form-control file-container" type="file" name="file" value=""><br>
+                <input class="form-control" type="file" name="" value=""><br>
             </div>
             <div class="form-group col-sm-12">
                 <p>手紙を届けるメールアドレス</p>
@@ -59,12 +64,12 @@
     </div>
     <pre>
         <?php 
-            // var_dump($_SERVER);
-            // var_dump($_COOKIE);
+            var_dump($_SERVER);
+            var_dump($_COOKIE);
         ?> 
     </pre>
 
-    <!-- bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- jQuery読み込み -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </body>
 </html>

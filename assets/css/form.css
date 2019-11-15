@@ -32,3 +32,16 @@ h1{
     height: 130px; 
     width: 100%;
 }
+
+.error_text{
+    color: red;
+}
+
+.check_color{
+    margin: 10px;
+    color: red;
+}
+
+.color_green{
+    color:#4CAF50;
+}

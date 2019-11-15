@@ -14,41 +14,32 @@
         }
 
         // DBに新規登録の情報を追加する
-        function model_sign_up_add()
+        function model_sign_up_add($data)
         {
-            $name =  $this->input->post('name',true);
-            $email = $this->input->post('mail',true);
-            $password = $this->input->post('pswd',true);
-            // $passwordをハッシュ化
-            $hash = password_hash($password, PASSWORD_DEFAULT);
             try
             {
-                $data = array(
-                    'name' => $name,
-                    'mail_address' => $email,
-                    'password' => $hash
-                );
-                // 重複のpasswordがあるか確認
-                $this->db->select('password');
-                $this->db->from('user_inf');
-                $get_password = $this->db->get();
-                if($email === $get_password){ ?>
-                    <script>
-                        alert('メールアドレスが重複しています。"\n"その他のメールアドレスをご登録ください。');
-                    </script><?php
-                    redirect('MtoF_sign_up');
+                // 重複のmail_addressがあるか確認
+                $sql="SELECT * FROM user_inf WHERE mail_address=?";
+                $query=$this->db->query($sql,$data['mail_address']);
+                //もしクエリの行数が1件以上あればfalse
+                if($query->num_rows() > 0){
+                    return false;
                 }else{
-                    // DBに情報を追加
-                    $result = $this->db->insert('user_inf',$data);
-                    return $result;
+                    // それ以外は情報を追加する
+                    $this->db->insert('user_inf',$data);
+                    return true;
                 }
             }
-            catch(Exception $e) { ?>
+            catch(Exception $e) 
+            { 
+                ?>
                 <script>
                     alert('登録に失敗しました');
-                </script><?php
-                redirect('MtoF_sign_up');
+                    location.href="/MtoF_sign_up";
+                </script>
+                <?php
             }
         }
     }
+
 ?>
