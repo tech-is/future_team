@@ -4,24 +4,13 @@
     if(!isset($_SESSION)){
         session_start();
     }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- css読み込み -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/MtoF_form.css">
-    <!-- google_fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Mansalva&display=swap" rel="stylesheet">
+    <?php include(dirname(__FILE__)."/include/header.php"); ?>
     <title>未来メーーーール</title>
 </head>
 
@@ -36,57 +25,88 @@
         </div>
     </div>
 
-    <div class="container text-center">
-        <div class="row">
-            <form action="#" method="post" enctype="multipart/form-data" class="col-sm-12 ">
+    <?php echo '<div class="container text-center">' ?>
+    <?php echo '<div class="row">' ?>
 
-                <div class="form-group col-sm-8 offset-sm-2">
-                    <p>届く未来</p>
-                    <input type="date" name="" value="" required>
-                </div>
+    <?php echo form_open_multipart('#', ' class="col-sm-12" ');?>
 
-                <div class="form-group col-sm-8 offset-sm-2">
-                    <p>手紙を送る相手</p>
-                    <input type="text" class="form-control" name="" value="" placeholder="１年後のぼくへ" required>
-                </div>
+    <div class="form-group col-sm-8 offset-sm-2">
+        <p>届く未来</p>
+        <input type="date" name="" value="" required>
+    </div>
 
-                <div class="form-group col-sm-8 offset-sm-2">
-                    <p>手紙の内容</p>
-                    <textarea type="" class="form-control" name="" value="" placeholder="元気にしていますか" required></textarea>
-                </div>
+    <div class="form-group col-sm-8 offset-sm-2">
+        <p>手紙を送る相手</p>
+        <?php
+                    $data = array(
+                            'class'         => 'form-control',
+                            'name'          => '',
+                            'id'            => '',
+                            'value'         => '',
+                            'placeholder'   => '1年後の僕へ',
+                            'required'      => ''
+                    );
+                    echo form_input($data);
+                ?>
+    </div>
 
-                <div class="form-group col-sm-8 offset-sm-2">
-                    <p>写真・画像を手紙に添える</p>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile" data-browse="参照">ファイル選択...</label>
-                    </div>
+    <div class="form-group col-sm-8 offset-sm-2">
+        <p>手紙の内容</p>
+        <?php
+                    $data = array(
+                            'class'         => 'form-control',
+                            'name'          => '',
+                            'id'            => '',
+                            'value'         => '',
+                            'placeholder'   => '元気にしていますか',
+                            'required'      => ''
+                    );
+                    echo form_textarea($data);
+                ?>
+    </div>
 
-                </div>
+    <div class="form-group col-sm-8 offset-sm-2">
+        <p>写真・画像を手紙に添える</p>
+        <div class="custom-file">
+            <?php
+                        $data = array(
+                                'class'         => 'custom-file-input',
+                                'name'          => '',
+                                'id'            => 'customFile'
+                        );
 
-                <div class="form-group col-sm-8 offset-sm-2">
-                    <p>送付先メールアドレス</p>
-                    <input type="email" class="form-control" name="" value="" placeholder="Enter email" required>
-                    <small class="text-muted">We'll never share your email with anyone else.</small>
-                </div>
+                        $attributes = array(
+                                'class' => 'custom-file-label',
+                                'data-browse' => '参照'
+                        );
 
-                <div class="form-group col-sm-8 offset-sm-2">
-                    <input type="submit" class="btn btn-outline-primary" name="" value="手紙を送る">
-                </div>
-
-            </form>
+                        echo form_upload($data);
+                        echo form_label('ファイル選択...', 'customFile', $attributes);
+                    ?>
         </div>
     </div>
 
+    <div class="form-group col-sm-8 offset-sm-2">
+        <p>送付先メールアドレス</p>
+        <input type="email" class="form-control" name="" value="" placeholder="Enter email" required>
+        <small class="text-muted">We'll never share your email with anyone else.</small>
+    </div>
 
-
+    <div class="form-group col-sm-8 offset-sm-2">
+        <?php
+                    $submit = array(
+                            'class'         => 'btn btn-outline-primary',
+                            'name'          => ''
+                    );
+                    echo form_submit($submit, '手紙を送信する');
+                    echo form_textarea($data);
+                ?>
+    </div>
     <?php
-            // var_dump($_SERVER);
-            // var_dump($_COOKIE);
+            $string = '</div></div>';
+            echo form_close($string);
         ?>
-
-    <!-- jQuery読み込み -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <?php include(dirname(__FILE__)."/include/footer.php"); ?>
 </body>
 
 </html>
