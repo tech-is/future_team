@@ -1,47 +1,54 @@
+/*---------------------------------
+
+  0.共通のスタイル
+
+  1.form_view.php
+    1.1メインビジュアル
+    1.2
+    1.3
+
+  2.footer
+
+---------------------------------*/
+
+/*---------------------------------
+
+    0.共通のスタイル
+
+---------------------------------*/
 body {
     text-align: center;
     padding: 5%;
     background-color: #99CCFF;
 }
 
-h1{
-    font-family: 'Mansalva', cursive;
-    font-family: 'Fascinate Inline', cursive;
+/*---------------------------------
+
+    1.form_view.php
+
+---------------------------------*/
+
+/*
+    添付ファイルフォーム
+---------------------------------*/
+
+.custom-file {
+    overflow: hidden;
 }
 
-.header-container{
-    padding-bottom: 5%;
+.custom-file-label {
+    white-space: nowrap;
 }
 
-.body-container{
-    padding: 0 20% ;
-}
-
-.form-container{
-    margin-bottom: 5%;
-    padding: 3%; 
-}
-
-.file-container{
-    margin-bottom: 5%;
-    padding-bottom: 3%;
-}
-
-.text-container{
-    margin-bottom: 5%;
-    height: 130px; 
-    width: 100%;
-}
-
-.error_text{
+.error_text {
     color: red;
 }
 
-.check_color{
+.check_color {
     margin: 10px;
     color: red;
 }
 
-.color_green{
-    color:#4CAF50;
+.color_green {
+    color: #4CAF50;
 }

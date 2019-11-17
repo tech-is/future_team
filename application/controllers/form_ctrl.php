@@ -6,8 +6,7 @@ class Form_ctrl extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		// tokenの生成
-		$_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(24));
+		$_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(24)); // tokenの生成
 	}
 
 	public function index()
@@ -23,5 +22,10 @@ class Form_ctrl extends CI_Controller {
 	public function view_form()
 	{
 		$this->load->view('view_form');
+	}
+
+	public function login_view()
+	{
+		$this->load->view("login_view");
 	}
 }

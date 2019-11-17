@@ -6,14 +6,17 @@
     }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- bootstrap読み込み -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- css読み込み -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/MtoF_form.css">
     <!-- google_fonts -->
@@ -21,49 +24,69 @@
     <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Mansalva&display=swap" rel="stylesheet">
     <title>未来メーーーール</title>
 </head>
+
 <body>
-    <div style="text-align: right;">
-        <a href="<?php echo base_url('MtoF_sign_up'); ?>">新規登録</a><br>
-        <a href="<?php echo base_url('MtoF_log_in'); ?>">ログイン</a>
+    <div class="text-right">
+        <a href="<?php echo base_url()."form_ctrl/login_view"?>">新規登録</a>
     </div>
-    <div class="header-container">
-        <h1>Mail To The Future<h1>
+
+    <div class="container">
+        <div class="col-sm-12 text-center">
+            <h1>Mail To The Future<h1>
+        </div>
     </div>
-    <div class="body-container">
-        <form action="#" method="post" enctype="multipart/form-data">
-            <div class="form-group col-sm-12">
-                <p>届けたい未来</p>
-                <input class="form-control form-container" type="date" name="" value="" required><br>
-            </div>
-            <div class="form-group col-sm-12">
-                <p>手紙を送る相手</p>
-                <input class="form-control form-container" type="text" name="" value="" placeholder="１年後のぼくへ" required><br>
-            </div>
-            <div class="form-group col-sm-12">
-                <p>手紙の内容</p>
-                <textarea class="text-container" type="" name="" value="" placeholder="元気にしていますか" required></textarea><br>
-            </div>
-            <div class="form-group col-sm-12">
-                <p>写真を入れる</p>
-                <input class="form-control" type="file" name="" value=""><br>
-            </div>
-            <div class="form-group col-sm-12">
-                <p>手紙を届けるメールアドレス</p>
-                <input class="form-control form-container" type="email" name="" value="" required><br>
-            </div>
-            <div class="form-group col-sm-12">
-                <input class="btn btn-outline-primary" type="submit" name="" value="送信" >
-            </div>
-        </form>
+
+    <div class="container text-center">
+        <div class="row">
+            <form action="#" method="post" enctype="multipart/form-data" class="col-sm-12 ">
+
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <p>届く未来</p>
+                    <input type="date" name="" value="" required>
+                </div>
+
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <p>手紙を送る相手</p>
+                    <input type="text" class="form-control" name="" value="" placeholder="１年後のぼくへ" required>
+                </div>
+
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <p>手紙の内容</p>
+                    <textarea type="" class="form-control" name="" value="" placeholder="元気にしていますか" required></textarea>
+                </div>
+
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <p>写真・画像を手紙に添える</p>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile" data-browse="参照">ファイル選択...</label>
+                    </div>
+
+                </div>
+
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <p>送付先メールアドレス</p>
+                    <input type="email" class="form-control" name="" value="" placeholder="Enter email" required>
+                    <small class="text-muted">We'll never share your email with anyone else.</small>
+                </div>
+
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <input type="submit" class="btn btn-outline-primary" name="" value="手紙を送る">
+                </div>
+
+            </form>
+        </div>
     </div>
-    <pre>
-        <?php 
-            var_dump($_SERVER);
-            var_dump($_COOKIE);
-        ?> 
-    </pre>
+
+
+
+    <?php
+            // var_dump($_SERVER);
+            // var_dump($_COOKIE);
+        ?>
 
     <!-- jQuery読み込み -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </body>
+
 </html>
