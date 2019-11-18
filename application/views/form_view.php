@@ -15,25 +15,29 @@
         //container&row Start
         echo '<div class="container text-center">';
         echo '<div class="row">';
+        //form Start
+        echo form_open_multipart('', ' class="col-sm-12" ');
     ?>
 
-    <?php echo form_open_multipart('#', ' class="col-sm-12" ');?>
-
+    <!-- row1 -->
     <div class="form-group col-sm-8 offset-sm-2">
         <p>届く未来</p>
-        <input type="date" name="" value="" required>
+        <?php echo form_input_date($to_send_date_data); ?>
     </div>
 
+    <!-- row2 -->
     <div class="form-group col-sm-8 offset-sm-2">
         <p>手紙を送る相手</p>
-        <?php echo form_input($who_data); ?>
+        <?php echo form_input($to_whom_data); ?>
     </div>
 
+    <!-- row3 -->
     <div class="form-group col-sm-8 offset-sm-2">
         <p>手紙の内容</p>
-        <?php echo form_textarea($mail_data); ?>
+        <?php echo form_textarea($message_data); ?>
     </div>
 
+    <!-- row4 -->
     <div class="form-group col-sm-8 offset-sm-2">
         <p>写真・画像を手紙に添える</p>
         <div class="custom-file">
@@ -44,12 +48,14 @@
         </div>
     </div>
 
+    <!-- row5 -->
     <div class="form-group col-sm-8 offset-sm-2">
         <p>送付先メールアドレス</p>
-        <input type="email" class="form-control" name="" value="" placeholder="Enter email" required>
+        <?php echo form_input_email($email_data); ?>
         <small class="text-muted">We'll never share your email with anyone else.</small>
     </div>
 
+    <!-- row6 -->
     <div class="form-group col-sm-8 offset-sm-2">
         <?php echo form_submit($submit_data, '手紙を送信する'); ?>
     </div>
@@ -57,6 +63,7 @@
     <?php
         //container&row End
         $string = '</div></div>';
+        //form End
         echo form_close($string);
     ?>
 
