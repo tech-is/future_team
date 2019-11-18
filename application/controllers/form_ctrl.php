@@ -6,13 +6,22 @@ class Form_ctrl extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(24)); // tokenの生成
+		// sessionが開始していない場合sessionを開始する
+		if(!isset($_SESSION)){
+			session_start();
+		}
 	}
 
 	public function index()
 	{
 		$this->load->view('form_view');
 	}
+
+	public function send_mail()
+	{
+
+	}
+
 
 	public function view_sign_up()
 	{
