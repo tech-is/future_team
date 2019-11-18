@@ -11,7 +11,13 @@ class Form_ctrl extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('form_view');
+
 		var_dump($_POST);
+
+		$hash = $this->security->get_csrf_hash();
+
+		var_dump($hash);
+
 		var_dump($_SESSION);
 	}
 

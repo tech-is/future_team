@@ -27,12 +27,12 @@
 
     $file_data = array(
         'class'         => 'custom-file-input',
-        'name'          => 'file',
         'id'            => 'customFile'
     );
 
     $label_data = array(
         'class' => 'custom-file-label',
+        'for'   => 'customFile',
         'data-browse' => '参照'
     );
 

@@ -1,6 +1,6 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-    include(dirname(__FILE__)."/attributes/form.php");
+    include(dirname(__FILE__)."/attributes/form-data.php");
 
     echo doctype();
     include(dirname(__FILE__)."/include/header.php");
@@ -15,6 +15,7 @@
         //container&row Start
         echo '<div class="container text-center">';
         echo '<div class="row">';
+
         //form Start
         echo form_open_multipart('', ' class="col-sm-12" ');
     ?>
