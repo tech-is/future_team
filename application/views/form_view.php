@@ -14,7 +14,7 @@
     <title>未来メーーーール</title>
 </head>
 
-<body>
+<body class="wrap">
     <div class="text-right">
         <a href="<?php echo base_url()."form_ctrl/login_view"?>">新規登録</a>
     </div>
@@ -38,51 +38,49 @@
     <div class="form-group col-sm-8 offset-sm-2">
         <p>手紙を送る相手</p>
         <?php
-                    $data = array(
-                            'class'         => 'form-control',
-                            'name'          => '',
-                            'id'            => '',
-                            'value'         => '',
-                            'placeholder'   => '1年後の僕へ',
-                            'required'      => ''
-                    );
-                    echo form_input($data);
-                ?>
+            $to_data = array(
+                    'class'         => 'form-control',
+                    'name'          => '',
+                    'id'            => '',
+                    'value'         => '',
+                    'placeholder'   => '1年後の僕へ',
+                    'required'      => ''
+            );
+            echo form_input($to_data);
+        ?>
     </div>
 
     <div class="form-group col-sm-8 offset-sm-2">
         <p>手紙の内容</p>
         <?php
-                    $data = array(
-                            'class'         => 'form-control',
-                            'name'          => '',
-                            'id'            => '',
-                            'value'         => '',
-                            'placeholder'   => '元気にしていますか',
-                            'required'      => ''
-                    );
-                    echo form_textarea($data);
-                ?>
+            $mail_data = array(
+                    'class'         => 'form-control',
+                    'name'          => '',
+                    'id'            => '',
+                    'value'         => '',
+                    'placeholder'   => '元気にしていますか',
+                    'required'      => ''
+            );
+            echo form_textarea($mail_data);
+        ?>
     </div>
 
     <div class="form-group col-sm-8 offset-sm-2">
         <p>写真・画像を手紙に添える</p>
         <div class="custom-file">
             <?php
-                        $data = array(
-                                'class'         => 'custom-file-input',
-                                'name'          => '',
-                                'id'            => 'customFile'
-                        );
-
-                        $attributes = array(
-                                'class' => 'custom-file-label',
-                                'data-browse' => '参照'
-                        );
-
-                        echo form_upload($data);
-                        echo form_label('ファイル選択...', 'customFile', $attributes);
-                    ?>
+                $file_data = array(
+                        'class'         => 'custom-file-input',
+                        'name'          => '',
+                        'id'            => 'customFile'
+                );
+                $attributes = array(
+                        'class' => 'custom-file-label',
+                        'data-browse' => '参照'
+                );
+                echo form_upload($file_data);
+                echo form_label('ファイル選択...', 'customFile', $attributes);
+            ?>
         </div>
     </div>
 
@@ -94,18 +92,17 @@
 
     <div class="form-group col-sm-8 offset-sm-2">
         <?php
-                    $submit = array(
+                    $submit_data = array(
                             'class'         => 'btn btn-outline-primary',
                             'name'          => ''
                     );
-                    echo form_submit($submit, '手紙を送信する');
-                    echo form_textarea($data);
+                    echo form_submit($submit_data, '手紙を送信する');
                 ?>
     </div>
     <?php
-            $string = '</div></div>';
-            echo form_close($string);
-        ?>
+        $string = '</div></div>';
+        echo form_close($string);
+    ?>
     <?php include(dirname(__FILE__)."/include/footer.php"); ?>
 </body>
 
