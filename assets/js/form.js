@@ -10,8 +10,6 @@ $( '#submit' ).on( 'click', function() {
     // form 要素を取得
     var form_data = $('form').serializeArray();
 
-    // 
-    
     // Ajaxで送信
     alert('aaa');
     console.log(form_data);
