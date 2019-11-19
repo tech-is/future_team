@@ -47,6 +47,7 @@
 
     $submit_data = array(
         'class'         => 'btn btn-outline-primary',
+        'id'            => 'submit',
         'name'          => ''
     );
 ?>
