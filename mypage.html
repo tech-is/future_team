@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- <link ref="stylesheet" href="assets/css/styles.css"> -->
+    <title>フォーム</title>
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header class="py-4 bg-white text-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                </ul>
+                <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <div class="containaer text-center">
+            <div class="img_wrapper">
+                <img src="assets/img/タイムカプセル画像.png" alt=mtof>
+            </div>   
+                <!-- <img src="assets/img/time-capcel.png" alt=mtof> -->
+            <!-- <a class="bg-white text-dark d-block py-4"></a> -->
+        </div>
+    </header>
+
+    <!-- ヘッダー終わり -->
+    <!-- コンテナいれる  -->
+    <div class="py-4 bg-light">
+        <section id="about">
+            <div class="container">
+
+                <div style="text-align: right;">
+                    <a href="<?php echo base_url(); ?>MtoF_sign_up/">新規登録</a><br>
+                    <a href="<?php echo base_url(); ?>MtoF_log_in/">ログイン</a>
+                </div>
+
+                <div class="row justiify-content-center">
+                    <h1>Mail To The Future<h1>
+
+                </div>
+
+                <div class="body-container text-left">
+                    <form action="#" method="post" enctype="multipart/form-data">
+
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="form-group col-sm-12 col-md-12">
+                                    <h4>届けたい未来</h4>
+                                    <input class="form-control form-container" type="date" name="" value=""
+                                        placeholder="1年後" required><br>
+                                </div>
+                            
+                                <div class="form-group col-sm-12 col-md-12">
+                                    <h4><label for="text6a" class="col-form-label-lg">手紙を送る相手<span
+                                                class="badge badge-warning">必須</span></label>
+                                        <input class="form-control form-control-lg" type="text" id="text6a"
+                                            placeholder=""></h4>
+                                </div>
+
+                                <div class="form-group col-sm-12 col-md-12">
+                                    <h4><label for="email">相手のメールアドレス</label><span class="badge badge-warning">必須</span>
+                                    </h4>
+                                    <div>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-sm-12 col-md-12">
+                                    <h4><label for="textarea1">手紙の内容</label></h4>
+                                    <textarea id="textarea1" class="form-control" rows="6"></textarea>
+                                </div>
+
+                                <div class="form-group col-sm-12 col-md-12">
+                                    <!-- <div class="form-group">
+                                        <label for="file1">写真を入れる</label>
+                                        <input type="file" id="file1" class="form-control-file">
+                                    </div> -->
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="custom-file-1" data-browse="aaa" required>
+                                        <label class="custom-file-label" for="custom-file-1">ファイルを選択してください</label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-12">
+                                    <!-- <input class="btn btn-outline-success" type="submit" name="" value="送信"> -->
+                                    <button class="btn btn-outline-success btn-lg btn-block" type="submit">送　信</button>
+                                </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    </div>
+    </div>
+    <!-- フッター      -->
+    <br>
+    <footer class="py-4 bg-dark text-light">
+        <div class="container text-center">
+            <p><small>&copy 2019-2019 Mail to the Future</small></p>
+        </div>
+    </footer></br>
+    <!-- フッター終わり -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
