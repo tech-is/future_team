@@ -1,1 +1,0 @@
-<!-- password_hashを作る -->

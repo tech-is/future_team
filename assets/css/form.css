@@ -16,17 +16,24 @@
     0.共通のスタイル
 
 ---------------------------------*/
-body {
-    text-align: center;
-    padding: 5%;
-    background-color: #99CCFF;
+
+.pace-running > *:not(.pace) { /* pace.js 実行中はページ本体を隠す */
+    display: none;
 }
+
+body {
+    background-color: #e5ab47;
+}
+
+
+
 
 /*---------------------------------
 
     1.form_view.php
 
 ---------------------------------*/
+
 
 /*
     添付ファイルフォーム
@@ -38,17 +45,4 @@ body {
 
 .custom-file-label {
     white-space: nowrap;
-}
-
-.error_text {
-    color: red;
-}
-
-.check_color {
-    margin: 10px;
-    color: red;
-}
-
-.color_green {
-    color: #4CAF50;
 }
