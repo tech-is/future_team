@@ -17,7 +17,7 @@
         echo '<div class="row">';
 
         //form Start
-        echo form_open_multipart('', ' class="col-sm-12" ');
+        echo form_open_multipart('', ' class = "col-sm-12" ');
     ?>
 
     <!-- row1 -->

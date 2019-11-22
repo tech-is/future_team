@@ -22,7 +22,7 @@ class Form_ctrl extends CI_Controller {
 	}
 
 	public function get_post() {
-		
+		var_dump($form_data);
 	}
 
 	public function send_mail()

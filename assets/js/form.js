@@ -1,34 +1,38 @@
 // 添付ファイルフォーム
-$('.custom-file-input').on('change',function(){
+$('.custom-file-input').on('change', function () {
     $(this).next('.custom-file-label').html($(this)[0].files[0].name);
 });
 
-$( '#submit' ).on( 'click', function() {
+$('form').submit(function () {
     // HTML通信を中断
     event.preventDefault();
 
+    // 多重送信対策
+    var submit_button = $('#submit');
+    submit_button.attr("disabled", true);
+
     // form 要素を取得
-    var form_data = $('form').serializeArray();
+    var form_data = $(this).serializeArray();
 
-    // Ajaxで送信
-    alert('aaa');
-    console.log(form_data);
+    // console.log(form_data);
+
+    // Ajax送信
+    $.ajax({
+        url: "form_ctrl/get_post",
+        type: "POST",
+        data: form_data,
+        contentType: 'application/json',
+        dataType: "json",
+        timeout: 10000,
+    })
+    .done(function (form_data) {
+        alert('done');
+        alert(form_data);
+    })
+    .fail(function () {
+        alert("Server Error. Pleasy try again later.");
+    })
+    .always(function () {
+        submit_button.attr("disabled", false);
+    });
 });
-
-
-// (click( function () {
-
-//     var form_data = $('form').serialize();
-
-//     console.log(form_data);
-
-//     $.ajax({
-//             url: "",  //POST送信を行うファイル名を指定
-//             type: "POST",
-//             data: form_data,  //POST送信するデータを指定（{ 'hoge': 'hoge' }のように連想配列で直接書いてもOK）
-//             timeout: 10000,
-//             success: function(data){
-//                 alert( "Data Saved: ");
-//             }
-//     });
-// });
