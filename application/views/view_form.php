@@ -23,7 +23,7 @@
         <h1>Mail To The Future<h1>
     </div>
     <div class="body-container">
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="#" method="post" enctype="multipart/form-data" onsubmit="return false;">
             <div class="form-group col-sm-12">
                 <p>届けたい未来</p>
                 <input class="form-control form-container" type="date" name="" value="" required><br>
@@ -42,19 +42,13 @@
             </div>
             <div class="form-group col-sm-12">
                 <p>手紙を届けるメールアドレス</p>
-                <input class="form-control form-container" type="email" name="" value="" required><br>
+                <input class="form-control form-container" type="email" name="" value="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
             </div>
             <div class="form-group col-sm-12">
                 <input class="btn btn-outline-primary" type="submit" name="" value="送信" >
             </div>
         </form>
     </div>
-    <pre>
-        <?php 
-            var_dump($_SERVER);
-            var_dump($_COOKIE);
-        ?> 
-    </pre>
 
     <!-- jQuery読み込み -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

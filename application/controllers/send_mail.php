@@ -29,6 +29,7 @@ class Send_mail extends CI_Controller {
 		$this->email->attach($mail_inf['file_name']);
 		// メール送信
 		$this->email->send();
+		
 	}
 
 	// errorが起きたら、管理者にmailを送る機能

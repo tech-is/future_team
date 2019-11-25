@@ -24,4 +24,6 @@ class MtoF extends CI_Controller {
 	{
 		$this->load->view('view_form');
 	}
+
+
 }

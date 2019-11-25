@@ -13,7 +13,6 @@ class MtoF_login extends CI_Controller {
 		// SESSIONの生成
 		$_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(24));
 		if(isset($_SESSION['id'])){
-		// if(isset($_SESSION['user'] %% $_SESSION['user'] === $_COOKIE["login_token"])){
 			$this->load->model('Model_login');
 			$this->load->helper('url');
 			// 書き込みメソッド実行

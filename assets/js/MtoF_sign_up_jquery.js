@@ -1,3 +1,5 @@
+
+
 $(function(){
     // console.log('hello');
     $("#check_pswd").keyup(function(){
