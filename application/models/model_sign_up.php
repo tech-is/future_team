@@ -1,9 +1,5 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-    // sessionが開始していない場合sessionを開始する
-    if(!isset($_SESSION)){
-        session_start();
-    }
 
     class Model_sign_up extends CI_Model
     {
