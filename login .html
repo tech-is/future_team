@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>新規登録画面</title>
+    <title>ログイン</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -39,9 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <!-- navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-1">
-            <a class="navbar-brand" href="#" style="width: 190px;"><img src="assets/img/MtoF_logo1.png" alt="mtof">
-            </a>
-
+        <a class="navbar-brand" href="#" style="width: 190px;"><img src="assets/img/MtoF_logo1.png" alt="mtof"></a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -55,50 +53,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <!-- <div class=""> -->
 
                     <div class="col-sm-6 col-md-6 mx-auto text-center">
-                        <img src="assets/img/signup.png" alt="mtof"style="width: 200px;"><br>
+                        <img src="assets/img/login.png" alt="mtof" style="width: 200px;"><br>
                         <a href="<?php echo base_url(); ?>MtoF_sign_up/">会員でない方はこちらから</a>
                     </div>
 
- <form class"form-signup">
-                    <!-- row1 -->
-                    <div class="form-group col-sm-12 col-md-12">
+                    <form class="form-login">
+                        <!-- row1 -->
+                        <div class="form-group col-sm-12 col-md-12">
                             <label>名前</label>
-                            <input class="form-control form-container" type="text" name="name" id="name"
-                        　    placeholder="(例)ヤマダタロウ"                pattern="[ァ-ヶ]*" title="全角カナで入力    してください" required>
-                    </div>
-                    
-                    <!-- <row2> -->
-                    <div class="form-group col-sm-12 col-md-12">
-                           <label>メールアドレス</label>
-                            <input class="form-control form-container" type="email" name="mail" id="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
-                    </div>
-                   
-                    <!-- <row3> -->
-                    <div class="form-group col-sm-12 col-md-12">
-                          <label>パスワード</label>
-                           <input class="form-control form-container" type="password" name="pswd" id="pswd" pattern="[A-Za-z]{8,}$"title="半角英字8文字以上で入力してください" required><br>
-                    </div>
-                   
-                    <!-- <row4> -->
-                    <div class="form-group col-sm-12 col-md-12">
-                           <p>パスワードの確認<i class="fa fa-check-circle check_color" aria-hidden="true"></i></p>
-                            <input class="form-control form-container" type="password" name="check_pswd" id="check_pswd"
-                                pattern="[A-Za-z]{8,}$" title="半角英字8文字以上で入力してください" on="CheckPassword(this)" required>
-                            <div class="error_text" id="error_text">
-                    </div>
+                            <input class="form-control form-container" type="text" name="name" id="name" 　
+                                placeholder="(例)ヤマダタロウ" title="全角カナで入力してください">
+                        </div>
 
-                    <!-- <row5> -->
-                    <div class="form-group col-sm-12 col-md-12">                          <div class="checkbox mb-2">
-                           　<label><input type="checkbox" value="remember-me">パスワードを保存します</label>    
-                    </div>
-                
-                    <!-- <row6> -->
-                    <div class="form-group col-sm-12 col-md-12">                  
-                        <button class="btn btn-success btn-lg btn-block" type="submit">送　信</button>
-                    </div> 
-                    <!-- CSRF対策 「トークンの埋め込み」 -->
-                   <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token']; ?>">
-                </form> 
+                        <!-- row2 -->
+                        <div class="form-group col-sm-12 col-md-12">
+                            <label>メールアドレス</label>
+                            <input class="form-control form-container" type="email" name="mail" id="mail">
+                        </div>
+
+                        <!-- row3 -->
+                        <div class="form-group col-sm-12 col-md-12">
+                            <label>パスワード</label>
+                            　<input class="form-control form-container" type="password" name="pswd" id="pswd" title="半角英字8文字以上で入力してください" >
+                        </div>
+
+                        <!-- row4 -->
+                        <div class="col-sm-12 col-md-12 checkbox mb-2">
+                            　<label><input type="checkbox" value="remember-me">パスワードを保存します</label>
+                        </div>
+
+                        <!-- row5 -->
+                        <div class="form-group col-sm-12 col-md-12">
+                            <button class="btn btn-success btn-lg btn-block" type="submit">送　信</button>
+                        </div>
+
+                        <!-- CSRF対策 「トークンの埋め込み」 -->
+                        <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token']; ?>">
+                    </form>
 
                 </div>
             </div>
@@ -156,5 +147,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         //         });
         //     });
         // </script>   
+
+
+
+
+
 </body>
 </html>

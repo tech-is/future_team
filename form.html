@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>編集画面</title>
+    <title>フォーム画面</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -62,13 +62,13 @@
 
         <!-- 日時 -->
         <div class="form-row mb-4">
-            <p>届けたい未来</p>
+            <p>届けたい未来</p><span class="badge badge-warning text-danger bg-light">必須</span>
             <input class="form-control form-container" type="date" name="" value="" placeholder="1年後" required>    
         </div>
         
         <!--氏名-->
         <div class="form-row mb-4">
-            <p>相手の名前</p>
+            <p>相手の名前</p><span class="badge badge-warning text-danger bg-light">必須</span>
             <input type="text" class="form-control" id="Name" placeholder="名前を入力してください" required>
             <div class="invalid-feedback">
             入力してください</div>
@@ -78,7 +78,7 @@
 
         <!--Eメール-->
         <div class="form-row mb-4">
-            <p>相手のメールアドレス</p>
+            <p>相手のメールアドレス</p><span class="badge badge-warning text-danger bg-light">必須</span>
             <input type="email" class="form-control" id="inputEmail" placeholder="Eメール" required>
             <div class="invalid-feedback">入力してください</div>
         </div>
@@ -86,7 +86,7 @@
 
         <!--ファイル選択-->
         <div class="form-row mb-4">
-            <p>写真</p>
+            <p>写真</p><span class="badge badge-warning text-danger bg-light">必須</span>
             <div class="custom-file">
             <input type="file" class="custom-file-input" id="customFile">
             <label class="custom-file-label" for="customFile" data-browse="参照">ファイル選択...</label>
@@ -96,15 +96,15 @@
 
         <!--内容-->
         <div class="form-row mb-4">
-            <label for="textarea1">手紙の内容</label>
+            <label for="textarea1">手紙の内容</label><span class="badge badge-warning text-danger bg-light">必須</span>
             <textarea class="form-control" id="Textarea" rows="10" placeholder="手紙の内容" required></textarea>
             <div class="invalid-feedback">入力してください</div>
         </div>
         <!--/内容-->
-         <!-- ボタン -->
-         <div class="col-sm-12 col-md-12">
-            <button class="btn btn-success btn-lg btn-block" type="submit">更　新</button>
-          </div>
+        <!-- ボタン -->
+        <div class="col-sm-12 col-md-12">
+          <button class="btn btn-success btn-lg btn-block" type="submit">送　信</button>
+        </div>
 
      
         </div>
