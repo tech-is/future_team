@@ -38,6 +38,7 @@
         </div>
     </div>
     <?php include(dirname(__FILE__)."/include/footer.php"); ?>
+    <script src="<?php echo base_url(); ?>assets/js/form.js" defer></script>
 
 </body>
 

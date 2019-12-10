@@ -13,8 +13,8 @@
         public function send_mail($time_now){
             try 
             {
-                // 
-                $sql="SELECT * FROM future_mail WHERE send_date = $time_now";
+                $spl=$this->db->where("send_data",$time_now);
+                // $sql="SELECT * FROM future_mail WHERE send_date = $time_now";
                 $query=$this->db->query($sql);
                 if(isset($query)){
                     $query = $this->db

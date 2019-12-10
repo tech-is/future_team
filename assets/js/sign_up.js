@@ -31,8 +31,6 @@ $('#submit_push').on("submit",function(){
             Swal.fire({
                 type:'warning',
                 title:ret['error_match']
-            }).then(function(result) {
-                location.href = "Main_ctrl/view_sign_up";
             });
         }
     });

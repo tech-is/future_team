@@ -4,37 +4,62 @@
     include(dirname(__FILE__)."/include/header.php");
 ?>
 <body>
-    <div class="header-container">
-        <h1>Sign Up<h1>
-    </div>
-    <div class="body-container">
-        <form action="#" id="submit_push" method="post" onsubmit="return false;">
-            <div class="form-group col-sm-12">
-                <p>名前</p>
-                <input class="form-control form-container" type="text" name="name" id="name" placeholder="(例)ヤマダタロウ" pattern="[ァ-ヶ]*" title="全角カナで入力してください" required><br>
+    <div class="background-wrapper"></div>
+    <div class="body-wrapper"></div>
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-1">
+        <a class="navbar-brand" href="<?php echo base_url();?>main_ctrl" style="width: 190px;">
+            <img src="<?php echo base_url();?>assets/img/MtoF_logo.png" alt="mtof">
+        </a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <div class="card row">
+                <div class="col-sm-6 col-md-6 mx-auto text-center">
+                    <img src="<?php echo base_url();?>assets/img/signup.png" alt="mtof"style="width: 200px;"><br>
+                    <!-- <a href="<?php echo base_url(); ?>MtoF_sign_up/">会員でない方はこちらから</a> -->
+                </div>
+                <form action="" id="submit_push" method="post" class="form-signup" onsubmit="return false;">
+                    <!-- row1 -->
+                    <div class="form-group col-sm-12 col-md-12">
+                        <label>名前</label>
+                        <input class="form-control form-container" type="text" name="name" id="name" placeholder="(例)ヤマダタロウ" title="全角カナで入力してください" required><br>
+                    </div>
+                    <!-- <row2> -->
+                    <div class="form-group col-sm-12 col-md-12">
+                        <label>メールアドレス</label>
+                        <input class="form-control form-container" type="email" name="mail" id="mail" required><br>
+                    </div>
+                    <!-- <row3> -->
+                    <div class="form-group col-sm-12 col-md-12">
+                        <label>パスワード</label>
+                        <input class="form-control form-container" type="password" name="pswd" id="pswd" title="半角英字8文字以上で入力してください" required><br>
+                    </div>
+                    <!-- <row4> -->
+                    <div class="form-group col-sm-12 col-md-12">
+                        <p>パスワードの確認</p>
+                        <input class="form-control form-container" type="password" name="check_pswd" id="check_pswd" title="半角英字8文字以上で入力してください" on="CheckPassword(this)" required>
+                    </div>
+                    <!-- <row5> -->
+                    <div class="form-group col-sm-12 col-md-12">
+                        <button class="btn btn-success btn-lg btn-block" type="submit">登録</button>
+                    </div> 
+                        <!-- CSRF対策 「トークンの埋め込み」 -->
+                        <input type="hidden" name="<?php echo $csrf_token;?>" id="token" value="<?php echo $csrf_hash;?>" />
+                </form>
             </div>
-            <div class="form-group col-sm-12">
-                <p>メールアドレス</p>
-                <input class="form-control form-container" type="email" name="mail" id="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
-            </div>
-            <div class="form-group col-sm-12">
-                <p>パスワード</p>
-                <input class="form-control form-container" type="password" name="pswd" id="pswd" pattern="[A-Za-z]{8,}$" title="半角英字8文字以上で入力してください" required><br>
-            </div>
-            <div class="form-group col-sm-12">
-                <p>パスワードの確認</p>
-                <input class="form-control form-container" type="password" name="check_pswd" id="check_pswd" pattern="[A-Za-z]{8,}$" title="半角英字8文字以上で入力してください" on="CheckPassword(this)" required>
-                <div class="error_text" id="error_text"></div>
-            </div>
-            <div class="form-group col-sm-12">
-                <input class="btn btn-outline-primary" type="submit"  value="登録">
-                <!-- CSRF対策 「トークンの埋め込み」 -->
-                <input type="hidden" name="<?php echo $csrf_token;?>" id="token" value="<?php echo $csrf_hash;?>" />
-            </div>
-        </form>
-    </div>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/sign_up.js"></script>
+        </div>
+    </section>
+
+
+    <?php include(dirname(__FILE__)."/include/footer.php"); ?>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/sign_up.js" defer></script>
     <!-- sweet_alert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </body>

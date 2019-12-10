@@ -10,7 +10,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/orange/pace-theme-loading-bar.min.css" />
     <!-- Main CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/form.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Mansalva&display=swap" rel="stylesheet">
