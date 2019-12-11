@@ -1,7 +1,66 @@
-@charset "UTF-8";
-/*login,signup*/
+/*---------------------------------
 
-  .body-wrapper {
+  0.共通のスタイル
+    0.1_ロゴサイズ
+    0.2_html，bodyフォント
+    0.3_navbarサイズ
+
+  1.sign_up,log_in
+    1.1_背景効果
+
+  2.form,edit
+    1.1_アイコン効果
+
+　3.mypage
+    1.1
+    1.2
+    1.3
+
+---------------------------------*/
+
+/*---------------------------------
+
+    0.共通のスタイル
+
+---------------------------------*/
+
+/*login,signup,form,edit*/
+@charset "UTF-8";
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+@import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
+html,
+body {
+    font-family: 'Courier Prime', monospace;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+
+nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+  /* footer{
+      width: 100%;
+      background-color:#fff;
+      text-align: center;
+  } */
+
+/*---------------------------------
+
+    1.sign_up,log_in
+
+---------------------------------*/
+
+.body-wrapper {
     /* background: linear-gradient(to bottom, #a6d900 0%, #ff4454 100%);
     opacity: 0.5;
     animation: huerotator 3s infinite alternate;
@@ -17,45 +76,53 @@
     animation: huerotator 3s infinite alternate;
     padding-top: 50px;
     padding-bottom: 50px;
-  }
+}
 
-  #about{
+#about{
     width: 100%;
     min-height: calc(100vh - 200px);
     margin-top: 100px;
     margin-bottom: 100px;
-  }
+}
 
-  @keyframes huerotator {
+@keyframes huerotator {
     0% {
-      -webkit-filter: hue-rotate(0deg);
-      filter: hue-rotate(0deg);
+        -webkit-filter: hue-rotate(0deg);
+        filter: hue-rotate(0deg);
     }
 
     100% {
-      -webkit-filter: hue-rotate(360deg);
-      filter: hue-rotate(360deg);
+        -webkit-filter: hue-rotate(360deg);
+        filter: hue-rotate(360deg);
     }
-  }
-  .background-wrapper {
+}
+.background-wrapper {
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
     width: 100%;
     height: 100%;
-    background-image: url(http://regacy.com/%E5%85%B1%E5%90%8C%E5%88%B6%E4%BD%9C/assets/img/marucap-back.jpg);
-  }
+    background-image: url(/assets/img/marucap-back.jpg);
+}
 
-  nav {
-    top: 0;
-    left: 0;
-    width: 100%;
+
+/*---------------------------------
+
+    2.form,edit
+
+---------------------------------*/
+figure img {
+    max-width: 100%;
     height: auto;
-  }
 
-  /* footer{
-      width: 100%;
-      background-color:#fff;
-      text-align: center;
-  } */
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+figure:hover img {
+-webkit-filter: blur(0);
+filter: blur(0);
+}
