@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // ajaxの実装
 $('#submit_push').on("submit",function(){
     var csrf_name = $("#token").attr('name'); // viewに生成されたトークンのname取得
@@ -36,6 +37,8 @@ $('#submit_push').on("submit",function(){
     });
 });
 
+=======
+>>>>>>> master
 $(function(){
     // console.log('hello');
     $("#check_pswd").keyup(function(){
