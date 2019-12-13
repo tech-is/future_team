@@ -28,14 +28,14 @@
 
             <!-- 日時 -->
             <div class="form-row mb-4">
-                <p>SEND MAIL TO THE FUTURE</p><span class="badge badge-warning text-danger bg-light">required</span>
+            <img src="<?php echo base_url();?>assets/img/SEND_MAIL_TO_THE_FUTURE.png" alt=mtof><span class="badge badge-warning text-danger bg-light">required</span>
                 <input class="form-control form-container" type="date" name="" value="" placeholder="1年後" required>    
             </div>
             
             <!--氏名-->
             <div class="form-row mb-4">
-                <p>ADDRESSEE</p><span class="badge badge-warning text-danger bg-light">required</span>
-                <input type="text" class="form-control" id="Name" placeholder="名前を入力してください" required>
+            <img src="<?php echo base_url();?>assets/img/ADDLESSEE.png" alt=mtof>assets/img/ADDLESSEE.png" alt=mtof><span class="badge badge-warning text-danger bg-light">required</span>
+                <input type="text" class="form-control" id="Name" placeholder="name here" required>
                 <div class="invalid-feedback">
                 入力してください</div>
             </div>
@@ -44,27 +44,27 @@
 
             <!--Eメール-->
             <div class="form-row mb-4">
-                <p>ADDRESS</p><span class="badge badge-warning text-danger bg-light">required</span>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Eメール" required>
+            <img src="<?php echo base_url();?>assets/img/ADDLESS.png" alt=mtof><span class="badge badge-warning text-danger bg-light">required</span>
+                <input type="email" class="form-control" id="inputEmail" placeholder="input e-mail addless" required>
                 <div class="invalid-feedback">入力してください</div>
             </div>
             <!--/Eメール-->
 
             <!--ファイル選択-->
             <div class="form-row mb-4">
-                <p>PICTURE</p><span class="badge badge-warning text-danger bg-light">required</span>
+            <img src="<?php echo base_url();?>assets/img/PICTURE.png" alt=mtof><span class="badge badge-warning text-danger bg-light">required</span>
                 <div class="custom-file">
                 <input type="file" class="custom-file-input" id="customFile">
-                <label class="custom-file-label" for="customFile" data-browse="参照">ファイル選択...</label>
+                <label class="custom-file-label" for="customFile" data-browse="brow">select picture</label>
                 </div>
             </div>
             <!--/ファイル選択-->
 
             <!--内容-->
             <div class="form-row mb-4">
-                <label for="textarea1">CONTENT OF A LETTER</label><span class="badge badge-warning text-danger bg-light">required</span>
-                <textarea class="form-control" id="Textarea" rows="10" placeholder="手紙の内容" required></textarea>
-                <div class="invalid-feedback">入力してください</div>
+            <img src="<?php echo base_url();?>assets/img/CONTENT_OF_LETTER.png" alt=mtof><span class="badge badge-warning text-danger bg-light">required</span>
+                <textarea class="form-control" id="Textarea" rows="10" placeholder="content of letter" required></textarea>
+                <div class="invalid-feedback">please enter</div>
             </div>
             <!--/内容-->
             <!-- ボタン -->
