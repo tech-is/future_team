@@ -43,12 +43,7 @@
                 // idの情報から名前、メアド、delete_flagを参照。
                 $query = $this->db
                 ->select('name, mail_address, delete_flag')
-                ->get_where(
-                    'user_inf',
-                    [
-                        'id'=>$user_id
-                    ]
-                )
+                ->get_where('user_inf',['id'=>$user_id])
                 ->row_array();
                 return $query;
             }

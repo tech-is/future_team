@@ -1,20 +1,27 @@
 /*---------------------------------
+
   0.共通のスタイル
     0.1_ロゴサイズ
     0.2_html，bodyフォント
     0.3_navbarサイズ
+
   1.sign_up,log_in
     1.1_背景効果
+
   2.form,edit
     1.1_アイコン効果
+
 　3.mypage
     1.1
     1.2
     1.3
+
 ---------------------------------*/
 
 /*---------------------------------
+
     0.共通のスタイル
+
 ---------------------------------*/
 
 /*login,signup,form,edit*/
@@ -28,7 +35,6 @@ img {
 html,
 body {
     font-family: 'Courier Prime', monospace;
-    font-weight: bold;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -49,7 +55,9 @@ nav {
   } */
 
 /*---------------------------------
+
     1.sign_up,log_in
+
 ---------------------------------*/
 
 .body-wrapper {
@@ -100,7 +108,9 @@ nav {
 
 
 /*---------------------------------
+
     2.form,edit
+
 ---------------------------------*/
 figure img {
     max-width: 100%;
@@ -116,15 +126,3 @@ figure:hover img {
 -webkit-filter: blur(0);
 filter: blur(0);
 }
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
