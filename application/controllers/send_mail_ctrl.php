@@ -14,7 +14,6 @@ class Send_mail_ctrl extends CI_Controller {
 		date_default_timezone_set('Asia/Tokyo');
         $time_now = date("Y-M-d");
 		$this->load->model('Model_send_mail');
-		$this->load->helper('url');
 		// 書き込みメソッドの実行
 		$mai_inf = $this->Model_send_mail->send_mail($time_now);
 		// mail送信機能

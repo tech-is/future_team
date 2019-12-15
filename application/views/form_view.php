@@ -7,68 +7,38 @@
 ?>
 
 <body class="wrap">
-
-    <a href="<?php echo base_url()."form_ctrl/login_view"?>">新規登録</a>
     <h1 class="text-center">Mail To The Future</h1>
-
-    <?php
-        //container&row Start
-        echo '<div class="container text-center">';
-        echo '<div class="row">';
-
-        //form Start
-        echo form_open_multipart('', ' class = "col-sm-12" ');
-    ?>
-
-    <!-- row1 -->
-    <div class="form-group col-sm-8 offset-sm-2">
-        <p>届く未来</p>
-        <?php echo form_input_date($to_send_date_data); ?>
-    </div>
-
-    <!-- row2 -->
-    <div class="form-group col-sm-8 offset-sm-2">
-        <p>手紙を送る相手</p>
-        <?php echo form_input($to_whom_data); ?>
-    </div>
-
-    <!-- row3 -->
-    <div class="form-group col-sm-8 offset-sm-2">
-        <p>手紙の内容</p>
-        <?php echo form_textarea($message_data); ?>
-    </div>
-
-    <!-- row4 -->
-    <div class="form-group col-sm-8 offset-sm-2">
-        <p>写真・画像を手紙に添える</p>
-        <div class="custom-file">
-            <?php
-                echo form_upload($file_data);
-                echo form_label('ファイル選択...', 'customFile', $label_data);
-            ?>
+    <div class="container text-center">
+        <div class="row">
+            <form action="#" method="post" enctype="multipart/form-data" onsubmit="return false;" class = "col-sm-12">
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <p>届く未来</p>
+                    <input class="form-control form-container" type="date" name="" value="" required><br>
+                </div>
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <p>手紙を送る相手</p>
+                    <input class="form-control form-container" type="text" name="" value="" placeholder="１年後のぼくへ" required><br>
+                </div>
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <p>手紙の内容</p>
+                    <textarea class="form-control form-container" type="" name="" value="" placeholder="元気にしていますか" required></textarea><br>
+                </div>
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <p>写真・画像を手紙に添える</p>
+                    <input class="form-control" type="file" name="" value=""><br>
+                </div>
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <p>送付先メールアドレス</p>
+                    <input class="form-control form-container" type="email" name="" value="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
+                </div>
+                <div class="form-group col-sm-8 offset-sm-2">
+                    <input class="btn btn-outline-primary" type="submit" name="" value="手紙を送信する" >
+                </div>
+            </form>
         </div>
     </div>
-
-    <!-- row5 -->
-    <div class="form-group col-sm-8 offset-sm-2">
-        <p>送付先メールアドレス</p>
-        <?php echo form_input_email($email_data); ?>
-        <small class="text-muted">We'll never share your email with anyone else.</small>
-    </div>
-
-    <!-- row6 -->
-    <div class="form-group col-sm-8 offset-sm-2">
-        <?php echo form_submit($submit_data, '手紙を送信する'); ?>
-    </div>
-
-    <?php
-        //container&row End
-        $string = '</div></div>';
-        //form End
-        echo form_close($string);
-    ?>
-
     <?php include(dirname(__FILE__)."/include/footer.php"); ?>
+    <script src="<?php echo base_url(); ?>assets/js/form.js" defer></script>
 
 </body>
 

@@ -1,9 +1,5 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-    // sessionが開始していない場合sessionを開始する
-    if(!isset($_SESSION)){
-        session_start();
-    }
 
     class Model_sign_up extends CI_Model
     {
@@ -19,8 +15,8 @@
             try
             {
                 // 重複のmail_addressがあるか確認
-                $sql="SELECT * FROM user_inf WHERE mail_address=?";
-                $query=$this->db->query($sql,$data['mail_address']);
+                $this->db->where("mail_address",$data['mail_address']);
+                $query=$this->db->get("user_inf");
                 //もしクエリの行数が1件以上あればfalse
                 if($query->num_rows() > 0){
                     return false;

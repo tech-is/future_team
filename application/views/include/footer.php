@@ -1,14 +1,9 @@
-<footer>
+<footer class="py-4 bg-dark text-light text-center">
+    <ul class="navbar-nav mr-auto">
+        <small>&copy 2019-2019 Mail to the Future</small>   
+    </ul>
     <!-- jQuery -->
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous" defer>
-    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" defer></script>
 
     <!-- Loading JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" defer></script>
-
-    <!-- Main JS -->
-    <script src="<?php echo base_url(); ?>assets/js/form.js" defer></script>
-</footer>

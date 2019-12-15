@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>管理ページ</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        img {
+        max-width: 100%;
+        height: auto;
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Roboto:700);
+
+        html,
+        body {
+        font-family: Roboto;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+<!-- navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-1">
+    <a class="navbar-brand" href="#" style="width: 190px;"><img src="assets/img/MtoF_logo1.png" alt="mtof"></a>
+    <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+    </li>
+    </ul>
+</nav>
+<!-- 全体 -->
+<main role="main">
+<!-- 見出し部分 -->
+<div class="py-4 col-sm-6 col-md-6 mx-auto text-center">
+<img src="assets/img/mypage.png" alt="mtof" style="width: 200px;"><br>
+</div>
+
+<!-- メッセージ保管部分 -->
+<div class="container-sm">
+<div class="row">
+
+  <!-- カード1 -->
+  <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+      <figure>
+        <img src="assets/img/IMG_1723.JPG"/>
+      </figure> 
+      <style>
+          figure img {
+          -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+          }
+          figure:hover img {
+          -webkit-filter: sepia(0);
+          filter: sepia(0);
+          }
+      </style>
+      <div class="card-body">
+          <p class="card-text">宛先</p>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <!-- 編集ボタン~モーダル -->
+                <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                data-target="#modal-1">編集</button>
+                <div class="modal fade" id="modal-1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5　class="modal-title"　id="exampleModalLabel"></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                          　  <div class="row">
+                                  <div class="col-5 pr-0">
+                                      <img src="assets/img/IMG_1723.JPG" alt="image" class="img-fluid">
+                                  </div>
+                                  <div class="col-7">
+                                      <h2 class="h4">宛先</h2>
+                                      <p>手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容</p>
+                                      <ul class="nav">
+                                          <li><a href="#" class="btn btn-outline-dark btn-sm" data-dismiss="modal">キャンセルする</a>
+                                          </li>
+                                          <li><a href="#" class="btn btn-link btn-sm" data-dismiss="modal">編集する</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- 削除ボタン～モーダル -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-2">
+                削除</button>
+                <div class="modal fade" id="modal-2" tabindex="-2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            本当に削除しますか？？？
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">キャンセル</button>
+                                <button type="button" class="btn btn-outline-danger">削除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- /ボタングループ -->
+              </div>
+            </div>
+            <!-- フッター -->
+            <div class="card-text">
+                <small class="text-muted">Last updated 1 years ago</small>
+            </div>
+            </div>
+      </div>
+  </div>
+<!-- カード1終わり -->
+
+  <!-- カード2 -->
+  <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+      <figure>
+        <img src="assets/img/IMG_1723.JPG"/>
+      </figure> 
+      <style>
+          figure img {
+          -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+          }
+          figure:hover img {
+          -webkit-filter: sepia(0);
+          filter: sepia(0);
+          }
+      </style>
+      <div class="card-body">
+          <p class="card-text">宛先</p>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <!-- 編集ボタン~モーダル -->
+                <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                data-target="#modal-1">編集</button>
+                <div class="modal fade" id="modal-1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5　class="modal-title"　id="exampleModalLabel"></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                          　  <div class="row">
+                                  <div class="col-5 pr-0">
+                                      <img src="assets/img/IMG_1723.JPG" alt="image" class="img-fluid">
+                                  </div>
+                                  <div class="col-7">
+                                      <h2 class="h4">宛先</h2>
+                                      <p>手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容</p>
+                                      <ul class="nav">
+                                          <li><a href="#" class="btn btn-outline-dark btn-sm" data-dismiss="modal">キャンセルする</a>
+                                          </li>
+                                          <li><a href="#" class="btn btn-link btn-sm" data-dismiss="modal">編集する</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- 削除ボタン～モーダル -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-2">
+                削除</button>
+                <div class="modal fade" id="modal-2" tabindex="-2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            本当に削除しますか？？？
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">キャンセル</button>
+                                <button type="button" class="btn btn-outline-danger">削除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- /ボタングループ -->
+              </div>
+            </div>
+            <!-- フッター -->
+            <div class="card-text">
+                <small class="text-muted">Last updated 1 years ago</small>
+            </div>
+            </div>
+      </div>
+  </div>
+<!-- カード2終わり -->
+
+  <!-- カード3 -->
+  <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+      <figure>
+        <img src="assets/img/IMG_1723.JPG"/>
+      </figure> 
+      <style>
+          figure img {
+          -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+          }
+          figure:hover img {
+          -webkit-filter: sepia(0);
+          filter: sepia(0);
+          }
+      </style>
+      <div class="card-body">
+          <p class="card-text">宛先</p>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <!-- 編集ボタン~モーダル -->
+                <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                data-target="#modal-1">編集</button>
+                <div class="modal fade" id="modal-1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5　class="modal-title"　id="exampleModalLabel"></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                          　  <div class="row">
+                                  <div class="col-5 pr-0">
+                                      <img src="assets/img/IMG_1723.JPG" alt="image" class="img-fluid">
+                                  </div>
+                                  <div class="col-7">
+                                      <h2 class="h4">宛先</h2>
+                                      <p>手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容</p>
+                                      <ul class="nav">
+                                          <li><a href="#" class="btn btn-outline-dark btn-sm" data-dismiss="modal">キャンセルする</a>
+                                          </li>
+                                          <li><a href="#" class="btn btn-link btn-sm" data-dismiss="modal">編集する</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- 削除ボタン～モーダル -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-2">
+                削除</button>
+                <div class="modal fade" id="modal-2" tabindex="-2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            本当に削除しますか？？？
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">キャンセル</button>
+                                <button type="button" class="btn btn-outline-danger">削除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- /ボタングループ -->
+              </div>
+            </div>
+            <!-- フッター -->
+            <div class="card-text">
+                <small class="text-muted">Last updated 1 years ago</small>
+            </div>
+            </div>
+      </div>
+  </div>
+<!-- カード3終わり -->
+
+  <!-- カード4 -->
+  <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+      <figure>
+        <img src="assets/img/IMG_1723.JPG"/>
+      </figure> 
+      <style>
+          figure img {
+          -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+          }
+          figure:hover img {
+          -webkit-filter: sepia(0);
+          filter: sepia(0);
+          }
+      </style>
+      <div class="card-body">
+          <p class="card-text">宛先</p>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <!-- 編集ボタン~モーダル -->
+                <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                data-target="#modal-1">編集</button>
+                <div class="modal fade" id="modal-1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5　class="modal-title"　id="exampleModalLabel"></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                          　  <div class="row">
+                                  <div class="col-5 pr-0">
+                                      <img src="assets/img/IMG_1723.JPG" alt="image" class="img-fluid">
+                                  </div>
+                                  <div class="col-7">
+                                      <h2 class="h4">宛先</h2>
+                                      <p>手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容</p>
+                                      <ul class="nav">
+                                          <li><a href="#" class="btn btn-outline-dark btn-sm" data-dismiss="modal">キャンセルする</a>
+                                          </li>
+                                          <li><a href="#" class="btn btn-link btn-sm" data-dismiss="modal">編集する</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- 削除ボタン～モーダル -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-2">
+                削除</button>
+                <div class="modal fade" id="modal-2" tabindex="-2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            本当に削除しますか？？？
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">キャンセル</button>
+                                <button type="button" class="btn btn-outline-danger">削除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- /ボタングループ -->
+              </div>
+            </div>
+            <!-- フッター -->
+            <div class="card-text">
+                <small class="text-muted">Last updated 1 years ago</small>
+            </div>
+            </div>
+      </div>
+  </div>
+<!-- カード4終わり -->
+
+  <!-- カード5 -->
+  <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+      <figure>
+        <img src="assets/img/IMG_1723.JPG"/>
+      </figure> 
+      <style>
+          figure img {
+          -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+          }
+          figure:hover img {
+          -webkit-filter: sepia(0);
+          filter: sepia(0);
+          }
+      </style>
+      <div class="card-body">
+          <p class="card-text">宛先</p>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <!-- 編集ボタン~モーダル -->
+                <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                data-target="#modal-1">編集</button>
+                <div class="modal fade" id="modal-1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5　class="modal-title"　id="exampleModalLabel"></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                          　  <div class="row">
+                                  <div class="col-5 pr-0">
+                                      <img src="assets/img/IMG_1723.JPG" alt="image" class="img-fluid">
+                                  </div>
+                                  <div class="col-7">
+                                      <h2 class="h4">宛先</h2>
+                                      <p>手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容</p>
+                                      <ul class="nav">
+                                          <li><a href="#" class="btn btn-outline-dark btn-sm" data-dismiss="modal">キャンセルする</a>
+                                          </li>
+                                          <li><a href="#" class="btn btn-link btn-sm" data-dismiss="modal">編集する</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- 削除ボタン～モーダル -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-2">
+                削除</button>
+                <div class="modal fade" id="modal-2" tabindex="-2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            本当に削除しますか？？？
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">キャンセル</button>
+                                <button type="button" class="btn btn-outline-danger">削除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- /ボタングループ -->
+              </div>
+            </div>
+            <!-- フッター -->
+            <div class="card-text">
+                <small class="text-muted">Last updated 1 years ago</small>
+            </div>
+            </div>
+      </div>
+  </div>
+<!-- カード5終わり -->
+
+  <!-- カード6 -->
+  <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+      <figure>
+        <img src="assets/img/IMG_1723.JPG"/>
+      </figure> 
+      <style>
+          figure img {
+          -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+          }
+          figure:hover img {
+          -webkit-filter: sepia(0);
+          filter: sepia(0);
+          }
+      </style>
+      <div class="card-body">
+          <p class="card-text">宛先</p>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <!-- 編集ボタン~モーダル -->
+                <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                data-target="#modal-1">編集</button>
+                <div class="modal fade" id="modal-1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5　class="modal-title"　id="exampleModalLabel"></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                          　  <div class="row">
+                                  <div class="col-5 pr-0">
+                                      <img src="assets/img/IMG_1723.JPG" alt="image" class="img-fluid">
+                                  </div>
+                                  <div class="col-7">
+                                      <h2 class="h4">宛先</h2>
+                                      <p>手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容</p>
+                                      <ul class="nav">
+                                          <li><a href="#" class="btn btn-outline-dark btn-sm" data-dismiss="modal">キャンセルする</a>
+                                          </li>
+                                          <li><a href="#" class="btn btn-link btn-sm" data-dismiss="modal">編集する</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- 削除ボタン～モーダル -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-2">
+                削除</button>
+                <div class="modal fade" id="modal-2" tabindex="-2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            本当に削除しますか？？？
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">キャンセル</button>
+                                <button type="button" class="btn btn-outline-danger">削除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- /ボタングループ -->
+              </div>
+            </div>
+            <!-- フッター -->
+            <div class="card-text">
+                <small class="text-muted">Last updated 1 years ago</small>
+            </div>
+            </div>
+      </div>
+  </div>
+<!-- カード6終わり -->
+
+  <!-- カード7 -->
+  <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+      <figure>
+        <img src="assets/img/IMG_1723.JPG"/>
+      </figure> 
+      <style>
+          figure img {
+          -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+          }
+          figure:hover img {
+          -webkit-filter: sepia(0);
+          filter: sepia(0);
+          }
+      </style>
+      <div class="card-body">
+          <p class="card-text">宛先</p>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <!-- 編集ボタン~モーダル -->
+                <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                data-target="#modal-1">編集</button>
+                <div class="modal fade" id="modal-1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5　class="modal-title"　id="exampleModalLabel"></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                          　  <div class="row">
+                                  <div class="col-5 pr-0">
+                                      <img src="assets/img/IMG_1723.JPG" alt="image" class="img-fluid">
+                                  </div>
+                                  <div class="col-7">
+                                      <h2 class="h4">宛先</h2>
+                                      <p>手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容</p>
+                                      <ul class="nav">
+                                          <li><a href="#" class="btn btn-outline-dark btn-sm" data-dismiss="modal">キャンセルする</a>
+                                          </li>
+                                          <li><a href="#" class="btn btn-link btn-sm" data-dismiss="modal">編集する</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- 削除ボタン～モーダル -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-2">
+                削除</button>
+                <div class="modal fade" id="modal-2" tabindex="-2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            本当に削除しますか？？？
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">キャンセル</button>
+                                <button type="button" class="btn btn-outline-danger">削除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- /ボタングループ -->
+              </div>
+            </div>
+            <!-- フッター -->
+            <div class="card-text">
+                <small class="text-muted">Last updated 1 years ago</small>
+            </div>
+            </div>
+      </div>
+  </div>
+<!-- カード7終わり -->
+
+  <!-- カード8 -->
+  <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+      <figure>
+        <img src="assets/img/IMG_1723.JPG"/>
+      </figure> 
+      <style>
+          figure img {
+          -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+          }
+          figure:hover img {
+          -webkit-filter: sepia(0);
+          filter: sepia(0);
+          }
+      </style>
+      <div class="card-body">
+          <p class="card-text">宛先</p>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <!-- 編集ボタン~モーダル -->
+                <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                data-target="#modal-1">編集</button>
+                <div class="modal fade" id="modal-1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5　class="modal-title"　id="exampleModalLabel"></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                          　  <div class="row">
+                                  <div class="col-5 pr-0">
+                                      <img src="assets/img/IMG_1723.JPG" alt="image" class="img-fluid">
+                                  </div>
+                                  <div class="col-7">
+                                      <h2 class="h4">宛先</h2>
+                                      <p>手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容</p>
+                                      <ul class="nav">
+                                          <li><a href="#" class="btn btn-outline-dark btn-sm" data-dismiss="modal">キャンセルする</a>
+                                          </li>
+                                          <li><a href="#" class="btn btn-link btn-sm" data-dismiss="modal">編集する</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- 削除ボタン～モーダル -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-2">
+                削除</button>
+                <div class="modal fade" id="modal-2" tabindex="-2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            本当に削除しますか？？？
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">キャンセル</button>
+                                <button type="button" class="btn btn-outline-danger">削除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- /ボタングループ -->
+              </div>
+            </div>
+            <!-- フッター -->
+            <div class="card-text">
+                <small class="text-muted">Last updated 1 years ago</small>
+            </div>
+            </div>
+      </div>
+  </div>
+<!-- カード8終わり -->
+
+  <!-- カード9 -->
+  <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+      <figure>
+        <img src="assets/img/IMG_1723.JPG"/>
+      </figure> 
+      <style>
+          figure img {
+          -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+          }
+          figure:hover img {
+          -webkit-filter: sepia(0);
+          filter: sepia(0);
+          }
+      </style>
+      <div class="card-body">
+          <p class="card-text">宛先</p>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+              <!-- 編集ボタン~モーダル -->
+                <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                data-target="#modal-1">編集</button>
+                <div class="modal fade" id="modal-1" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5　class="modal-title"　id="exampleModalLabel"></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                          　  <div class="row">
+                                  <div class="col-5 pr-0">
+                                      <img src="assets/img/IMG_1723.JPG" alt="image" class="img-fluid">
+                                  </div>
+                                  <div class="col-7">
+                                      <h2 class="h4">宛先</h2>
+                                      <p>手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容手紙の内容</p>
+                                      <ul class="nav">
+                                          <li><a href="#" class="btn btn-outline-dark btn-sm" data-dismiss="modal">キャンセルする</a>
+                                          </li>
+                                          <li><a href="#" class="btn btn-link btn-sm" data-dismiss="modal">編集する</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- 削除ボタン～モーダル -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-2">
+                削除</button>
+                <div class="modal fade" id="modal-2" tabindex="-2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            本当に削除しますか？？？
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">キャンセル</button>
+                                <button type="button" class="btn btn-outline-danger">削除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- /ボタングループ -->
+              </div>
+            </div>
+            <!-- フッター -->
+            <div class="card-text">
+                <small class="text-muted">Last updated 1 years ago</small>
+            </div>
+            </div>
+      </div>
+  </div>
+<!-- カード9終わり -->
+
+</div>
+</div>
+
+</main>
+
+<footer class="py-4 bg-dark text-light text-center">
+    <ul class="navbar-nav mr-auto">
+    <small>&copy 2019-2019 Mail to the Future</small>   
+    </ul>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+crossorigin="anonymous"></script>
+
+</body>
+</html>
