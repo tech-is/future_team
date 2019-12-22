@@ -24,8 +24,7 @@
                         'mail_address'=>$data['mail_address'],
                         'delete_flag'=>0
                     ]
-                )
-                ->row_array();
+                )->row_array();
                 return password_verify($data['password'], @$query['password'])? $query: false;
             }
             catch(Exception $e)

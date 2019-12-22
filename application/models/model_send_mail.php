@@ -20,7 +20,7 @@
                     $query = $this->db
                     ->select('to_name, to_address,send_date,message,file_name')
                     ->get_where('future_mail')->row_array();
-                return $query;
+                    return $query;
                 }else{
                     // 一致するmailがなかった場合処理を終了する
                     exit;

@@ -67,8 +67,19 @@ nav {
     height: auto;
 }
 
-  /* footer{
-      width: 100%;
-      background-color:#fff;
-      text-align: center;
-  } */
+/*---------------------------------
+
+    1.mypage_view.php
+
+---------------------------------*/
+
+
+.box_blue {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+.box_blue p {
+    margin: 0; 
+    padding: 0;
+}

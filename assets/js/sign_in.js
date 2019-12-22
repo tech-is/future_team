@@ -1,6 +1,8 @@
     $('#form').on("submit",function(){
-        var csrf_name = $("#token").attr('name'); // viewに生成されたトークンのname取得
-        var csrf_hash = $("#token").val(); // viewに生成されたトークンのハッシュ取得
+        var csrf_name = $("#token").attr('name'); 
+        // viewに生成されたトークンのname取得
+        var csrf_hash = $("#token").val(); 
+        // viewに生成されたトークンのハッシュ取得
         $.ajax({
         url: "/Login_ctrl/login",
         type: 'POST',

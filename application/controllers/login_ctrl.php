@@ -14,10 +14,12 @@ class Login_ctrl extends CI_Controller {
 		$data['csrf_token'] = $this->security->get_csrf_token_name();
 		$data['csrf_hash'] = $this->security->get_csrf_hash();
 		if(isset($_SESSION['id'])){
-			$this->load->model('Model_login');
-			// 書き込みメソッド実行
-			$get_user_inf = $this->Model_login->get_user($_SESSION['id']);
-			$this->load->view('mypage_view',$get_user_inf);
+			$this->load->model('Model_mypage');
+			$get_user_inf = $this->Model_mypage->mypages_info($_SESSION['id']);
+			// データの数をカウントして配列の先頭に格納
+			array_unshift($get_user_inf,count($get_user_inf));
+			// 配列としてviewへ渡す
+			$this->load->view('mypage_view',array('data' => $get_user_inf));
 		}else{
 			$this->load->view('login_view',$data);
 		}
@@ -48,6 +50,7 @@ class Login_ctrl extends CI_Controller {
 			echo json_encode($result,JSON_UNESCAPED_UNICODE);
 			exit;
 		}
+		
 		$data = [
 			'name' => $name,
 			'mail_address' => $email,
@@ -67,16 +70,6 @@ class Login_ctrl extends CI_Controller {
 			echo json_encode(["result" => "success", 'success_message' => 'ログインしました']);
 			exit;
 		}
-	}
-
-	function logout()
-	{
-		// sessionの破棄
-		session_destroy();
-		// erorr対策
-		$data['csrf_token'] = $this->security->get_csrf_token_name();
-		$data['csrf_hash'] = $this->security->get_csrf_hash();
-		$this->load->view('login_view',$data);
 	}
 
 }
