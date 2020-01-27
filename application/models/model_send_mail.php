@@ -13,14 +13,14 @@
         public function send_mail($time_now){
             try 
             {
-                // 
-                $sql="SELECT * FROM future_mail WHERE send_date = $time_now";
+                $spl=$this->db->where("send_data",$time_now);
+                // $sql="SELECT * FROM future_mail WHERE send_date = $time_now";
                 $query=$this->db->query($sql);
                 if(isset($query)){
                     $query = $this->db
                     ->select('to_name, to_address,send_date,message,file_name')
                     ->get_where('future_mail')->row_array();
-                return $query;
+                    return $query;
                 }else{
                     // 一致するmailがなかった場合処理を終了する
                     exit;

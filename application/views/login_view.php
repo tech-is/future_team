@@ -1,52 +1,65 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
+    echo doctype();
+    include(dirname(__FILE__)."/include/header.php");
 ?>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- bootstrap読み込み -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- css読み込み -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/MtoF_form.css">
-    <!-- google_fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Mansalva&display=swap" rel="stylesheet">
-    <title>ログイン</title>
-</head>
 <body>
+    <div class="background-wrapper"></div>
+    <div class="body-wrapper"></div>
 
-    <div class="header-container">
-        <h1>Log In<h1>
-    </div>
-    <div style="text-align:right;">
-        <a href="<?php echo base_url(); ?>MtoF_sign_up/">新規登録</a>
-    </div>
-    <div class="body-container">
-        <form id="form" onsubmit="return false;">
-            <div class="form-group col-sm-12">
-                <p>名前</p>
-                <input class="form-control form-container" type="text" name="name" id="name" placeholder="(例)ヤマダタロウ" pattern="[ァ-ヶ]*" title="全角カナで入力してください" required><br>
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-1">
+        <a class="navbar-brand" href="#" style="width: 190px;"><img src="<?php echo base_url(); ?>assets/img/MtoF_logo.png" alt="mtof"></a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+                <a class="nav-link" href="<?php echo base_url(); ?>Main_ctrl/view_sign_up">新規登録</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <div class="card row">
+                <div class="col-sm-6 col-md-6 mx-auto text-center">
+                    <img src="<?php echo base_url();?>assets/img/login.png" alt="mtof" style="width: 200px;"><br>
+                </div>
+                <form id="form" onsubmit="return false;" class = "form-login">
+                    <!-- row1 -->
+                    <div class="form-group col-sm-12 col-md-12">
+                        <label>名前(カナ)</label>
+                        <input class="form-control form-container" type="text" name="name" id="name" placeholder="(例)ヤマダタロウ" title="全角カナで入力してください" required><br>
+                        <div id="error_name" style="color: red;"></div>
+                    </div>
+                    <!-- row2 -->
+                    <div class="form-group col-sm-12 col-md-12">
+                        <label>メールアドレス</label>
+                        <input class="form-control form-container" type="email" name="mail" id="mail" placeholder="example@example.com" required><br>
+                        <div id="error_mail" style="color: red;"></div>
+                    </div>
+                    <!-- row3 -->
+                    <div class="form-group col-sm-12 col-md-12">
+                        <label>パスワード</label>
+                        <input class="form-control form-container" type="password" name="pswd" id="pswd" placeholder="半角英字8文字以上で入力してください" required><br>
+                        <div id="error_pswd" style="color: red;"></div>
+                    </div>
+                    <!-- row4 -->
+                    <div class="col-sm-12 col-md-12 checkbox mb-2">
+                        <label><input type="checkbox" value="remember-me">パスワードを保存します</label>
+                    </div>
+                    <!-- row5 -->
+                    <div class="form-group col-sm-12 col-md-12">
+                        <input class="btn btn-success btn-lg btn-block" type="submit" value="ログイン" >
+                    </div>
+                    <!-- CSRF対策 「トークンの埋め込み」 -->
+                    <input type="hidden" name="<?php echo $csrf_token;?>" id="token" value="<?php echo $csrf_hash;?>" />
+                </form>
             </div>
-            <div class="form-group col-sm-12">
-                <p>メールアドレス</p>
-                <input class="form-control form-container" type="email" name="mail" id="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
-            </div>
-            <div class="form-group col-sm-12">
-                <p>パスワード</p>
-                <input class="form-control form-container" type="password" name="pswd" id="pswd" pattern="[A-Za-z]{8,}$" title="半角英字8文字以上で入力してください" required><br>
-            </div>
-            <div class="form-group col-sm-12">
-                <!-- CSRF対策 「トークンの埋め込み」 -->
-                <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token']; ?>"> 
-                <input class="btn btn-outline-primary" type="submit" value="ログイン" >
-            </div>
-        </form>
-    </div>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src= "<?php echo base_url();?>assets/js/login_ajax.js"></script>
+        </div>
+    </section>
+    <?php include(dirname(__FILE__)."/include/footer.php"); ?>
+    <script type="text/javascript" src= "<?php echo base_url();?>assets/js/sign_in.js" defer></script>
+    <!-- sweet_alert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8" ></script>
 </body>
 </html>

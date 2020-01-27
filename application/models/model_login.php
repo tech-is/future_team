@@ -24,8 +24,7 @@
                         'mail_address'=>$data['mail_address'],
                         'delete_flag'=>0
                     ]
-                )
-                ->row_array();
+                )->row_array();
                 return password_verify($data['password'], @$query['password'])? $query: false;
             }
             catch(Exception $e)
@@ -43,12 +42,7 @@
                 // idの情報から名前、メアド、delete_flagを参照。
                 $query = $this->db
                 ->select('name, mail_address, delete_flag')
-                ->get_where(
-                    'user_inf',
-                    [
-                        'id'=>$user_id
-                    ]
-                )
+                ->get_where('user_inf',['id'=>$user_id])
                 ->row_array();
                 return $query;
             }
