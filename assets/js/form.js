@@ -1,11 +1,5 @@
-// 添付ファイルフォーム
-$('.custom-file-input').on('change', function () {
-    $(this).next('.custom-file-label').html($(this)[0].files[0].name);
-});
-
 // 写真の表示
 $('#myImage').on('change', function (e) {
-    console.log(e);
     var reader = new FileReader();
     reader.onload = function (e) {
         $("#preview").attr('src', e.target.result);
@@ -14,42 +8,44 @@ $('#myImage').on('change', function (e) {
 });
 
 
-$('form').submit(function () {
-    // HTML通信を中断
-    event.preventDefault();
-
-    // 多重送信対策
-    var submit_button = $('#submit');
-    submit_button.attr("disabled", true);
-
-    // form 要素を取得
-    var form_data = $(this).serializeArray();
-
-    console.log(form_data);
-
-    // Ajax送信
+$('form').on("submit",function () {
+    // 二重送信防止
+    // $(this).find(':submit').prop('disabled', 'true');
+    // formデータ獲得
+    var fd = new FormData($(this).get(0));
+    fd.append('csrf_token', $("#token").val());
+    // Ajax送信'
     $.ajax({
-        url: "form_ctrl/mtof",
+        url: "/Form_ctrl/mtof",
         type: "POST",
-        data: {
-            time : $('time').val(),
-            send_name : $('send_name').val(),
-            message : $('message').val(),
-            myImage : $('myImage').val(),
-            mail : $('mail').val()
-        },
-        contentType: 'application/json',
-        dataType: "json",
-        timeout: 10000,
-    })
-    .done(function (form_data) {
-        alert('done');
-        alert(form_data);
-    })
-    .fail(function () {
-        alert("Server Error. Pleasy try again later.");
-    })
-    .always(function () {
-        submit_button.attr("disabled", false);
+        data: fd,
+        processData: false,
+        contentType: false,
+        datetype: 'json'
+    }).then(function (data){
+        var ret = JSON.parse(data);
+        if(ret['result'] === "success"){
+            Swal.fire({
+                type:"success",
+                title:ret['success']
+            }).then(function(result) {
+                location.href = "http://mtof.com/Login_ctrl";
+            });
+        }else if(ret['result'] === "error"){
+            Swal.fire({
+                type:'warning',
+                title:ret['error']
+            });
+        }else if(ret['result'] === "not_match"){
+            $('#error_time').text("");
+            $("#error_img").text("");
+            $("#error_img").text("");
+            $("#error_mail").text("");
+            // errorの出力
+            $('#error_time').text(ret['error_time']);
+            $("#error_img").text(ret['error_size']);
+            $("#error_img").text(ret['error_img']);
+            $("#error_mail").text(ret['error_mail']);
+        }
     });
 });

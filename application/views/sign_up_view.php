@@ -28,23 +28,27 @@
                 <form action="" id="submit_push" method="post" class="form-signup" onsubmit="return false;">
                     <!-- row1 -->
                     <div class="form-group col-sm-12 col-md-12">
-                        <label>名前</label>
+                        <label>名前(カナ)</label>
                         <input class="form-control form-container" type="text" name="name" id="name" placeholder="(例)ヤマダタロウ" title="全角カナで入力してください" required><br>
+                        <div id="error_name" style="color: red;"></div>
                     </div>
                     <!-- <row2> -->
                     <div class="form-group col-sm-12 col-md-12">
                         <label>メールアドレス</label>
-                        <input class="form-control form-container" type="email" name="mail" id="mail" required><br>
+                        <input class="form-control form-container" type="email" name="mail" id="mail" placeholder="example@example.com" required><br>
+                        <div id="error_mail" style="color: red;"></div>
                     </div>
                     <!-- <row3> -->
                     <div class="form-group col-sm-12 col-md-12">
                         <label>パスワード</label>
-                        <input class="form-control form-container" type="password" name="pswd" id="pswd" title="半角英字8文字以上で入力してください" required><br>
+                        <input class="form-control form-container" type="password" name="pswd" id="pswd" placeholder="半角英字8文字以上で入力してください" required><br>
+                        <div id="error_pswd" style="color: red;"></div>
                     </div>
                     <!-- <row4> -->
                     <div class="form-group col-sm-12 col-md-12">
                         <p>パスワードの確認</p>
-                        <input class="form-control form-container" type="password" name="check_pswd" id="check_pswd" title="半角英字8文字以上で入力してください" on="CheckPassword(this)" required>
+                        <input class="form-control form-container" type="password" name="check_pswd" id="check_pswd"  placeholder="半角英字8文字以上で入力してください" on="CheckPassword(this)" required>
+                        <div></div>
                     </div>
                     <!-- <row5> -->
                     <div class="form-group col-sm-12 col-md-12">

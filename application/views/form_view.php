@@ -28,6 +28,7 @@
                 <div class="form-group col-sm-8 offset-sm-2">
                     <p>届く未来</p>
                     <input class="form-control form-container" type="date" name="time" id="time" required><br>
+                    <div id="error_time" style="color: red;"></div>
                 </div>
                 <div class="form-group col-sm-8 offset-sm-2">
                     <p>手紙を送る相手</p>
@@ -39,24 +40,29 @@
                 </div>
                 <div class="form-group col-sm-8 offset-sm-2">
                     <p>写真・画像を手紙に添える</p>
-                    <input type="file" name="myImage" id="myImage" accept="image/*">
+                    <input type="file" name="myImage" id="myImage" accept="image/*" required>
                     <div style="display:inline-block;min-width:200px; min-height:200px; border:5px dashed #eee; padding:10px;">
                         <img id="preview" style="height: 200px; ">
-                    </div>
+                    </div><br><br>
+                    <div id="error_img" style="color: red;"></div>
                 </div>
                 <div class="form-group col-sm-8 offset-sm-2">
                     <p>送付先メールアドレス</p>
-                    <input class="form-control form-container" type="email" name="mail" id="mail"  required><br>
+                    <input class="form-control form-container" type="email" name="mail" id="mail" placeholder="example@example.com" required><br>
+                    <div id="error_mail" style="color: red;"></div>
                 </div>
                 <div class="form-group col-sm-8 offset-sm-2">
                     <input class="btn btn-outline-primary" type="submit" name="" value="手紙を送信する" >
                 </div>
+                <input type="hidden" name="csrf_token" value="<?php echo $_COOKIE['csrf_cookie'];?>" class="token" id="token">
             </form>
         </div>
     </div>
 
     <?php include(dirname(__FILE__)."/include/footer.php"); ?>
     <script src="<?php echo base_url(); ?>assets/js/form.js" defer></script>
+    <!-- sweet_alert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8" defer></script>
 
 </body>
 

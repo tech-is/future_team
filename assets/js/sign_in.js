@@ -31,10 +31,14 @@
                     title:ret['error_message']
             });
             }else if(ret['result'] === "not_match"){
-                Swal.fire({
-                    type:'warning',
-                    title:ret['error_match']
-            });
+                $('#error_name').text("");
+                $('#error_mail').text("");
+                $('#error_pswd').text("");
+                // errorの出力
+                $('#error_name').text(ret['error_name']);
+                $("#error_mail").text(ret['error_mail']);
+                $("#error_mail").text(ret['common_mail']);
+                $("#error_pswd").text(ret['error_pswd']);
             }
         });
     });

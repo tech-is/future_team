@@ -3,15 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Sign_up_ctrl extends CI_Controller {
 
-	public function __construct()
-	{
-		parent::__construct();
-	}
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
-	public function index()
-	{
+    public function index()
+    {
         $this->load->view('view_sign_up');
-	}
+    }
 
     public function add_information()
     {
@@ -23,25 +23,22 @@ class Sign_up_ctrl extends CI_Controller {
         // 正規表現
         if(!preg_match('/^[ァ-ヶ]+$/u',$name)) {
             $result['result'] = "not_match";
-            $result['error_match'] = "名前の入力値に誤りがあります。";
-            echo json_encode($result,JSON_UNESCAPED_UNICODE);
-            exit;
+            $result['error_name'] = "名前の入力値に誤りがあります。";
         }
         if(!preg_match('/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/',$email) ){
             $result['result'] = "not_match";
-            $result['error_match'] = "メールの入力値に誤りがあります。";
-            echo json_encode($result,JSON_UNESCAPED_UNICODE);
-            exit;
+            $result['error_mail'] = "メールの入力値に誤りがあります。";
         }
         if(!preg_match('/^[A-Za-z]{8,}$/',$password)){
             $result['result'] = "not_match";
-            $result['error_match'] = "パスワードの入力値に誤りがあります。";
-            echo json_encode($result,JSON_UNESCAPED_UNICODE);
-            exit;
+            $result['error_pswd']= "パスワードの入力値に誤りがあります。";
         }
         if($password !== $check_pswd){
             $result['result'] = "not_match";
-            $result['error_match'] = "パスワードの入力値に誤りがあります。";
+            $result['error_pswd']= "パスワードの入力値に誤りがあります。";
+        }
+
+        if(!empty($result['result'])){
             echo json_encode($result,JSON_UNESCAPED_UNICODE);
             exit;
         }
@@ -52,14 +49,14 @@ class Sign_up_ctrl extends CI_Controller {
             'mail_address' => $email,
             'password' => $hash
         ];
-        $this->load->model('Model_sign_up',);
+        $this->load->model('Model_sign_up');
         // 書き込みメソッド実行
         $check = $this->Model_sign_up->model_sign_up_add($data);
         $result = [];
         // $checkがfalseを返した場合
         if(!$check){
-            $result['result'] = "error";
-            $result['error_message'] = "入力されたメールアドレスはお使いになれません。";
+            $result['result'] = "not_match";
+            $result['common_mail'] = "入力されたメールアドレスはお使いになれません。";
             echo json_encode($result,JSON_UNESCAPED_UNICODE);
         // $checkがtrueを返した場合
         }else{
@@ -67,5 +64,6 @@ class Sign_up_ctrl extends CI_Controller {
             $result['success_message'] = "登録完了しました。";
             echo json_encode($result,JSON_UNESCAPED_UNICODE);
         }
+        exit;
     }
 }

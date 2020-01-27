@@ -12,8 +12,7 @@
         // DBに新規登録の情報を追加する
         function model_sign_up_add($data)
         {
-            try
-            {
+            try {
                 // 重複のmail_addressがあるか確認
                 $this->db->where("mail_address",$data['mail_address']);
                 $query=$this->db->get("user_inf");
@@ -26,14 +25,9 @@
                     return true;
                 }
             }
-            catch(Exception $e) 
-            { 
-                ?>
-                <script>
-                    alert('登録に失敗しました');
-                    location.href="/MtoF_sign_up";
-                </script>
-                <?php
+            catch(Exception $e) {
+                
+                return false;
             }
         }
     }

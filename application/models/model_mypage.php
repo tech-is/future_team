@@ -16,7 +16,7 @@
                 // idの情報からメールの情報を取得する
                 $query = $this->db
                 ->select('id,user_id,to_name,to_address,send_date,message,file_name,delete_flag,created_at')
-                ->get_where('future_mail',['user_id'=>$user_id])
+                ->get_where('future_mail',['user_id'=>$user_id,'delete_flag'=>0])
                 ->result_array();
                 return $query;
             }
@@ -31,6 +31,7 @@
         {
             try
             {
+                var_dump($delete_id);
                 $this->db->set('delete_flag','1');
                 $this->db->where('id', $delete_id);
                 $this->db->update('future_mail');
@@ -40,5 +41,11 @@
                 $no = "失敗";
                 return $no;
             }
+        }
+
+        function change_data($data)
+        {
+            $this->db->where('id', $data["id"]);
+            return $this->db->update('future_mail', $data);
         }
     }

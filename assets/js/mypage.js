@@ -1,5 +1,8 @@
 // 削除機能
 $(".delete").on("click",function() {
+    // 削除ボタンが押された部分のidを取得
+    var idName =  $(this).val(); 
+    // SweetAlert2
     Swal.fire({
         title: '本当に削除されますか？',
         type: 'warning',
@@ -13,11 +16,12 @@ $(".delete").on("click",function() {
             var csrf_name = $(".token").attr('name'); 
             // viewに生成されたトークンのハッシュ取得
             var csrf_hash = $(".token").val(); 
+            
             $.ajax({
                 url: '/mypage_ctrl/delete',
                 type: 'POST',
                 data: {
-                    delete_id: $('.delete_id').val(),
+                    delete_id: idName,
                     [csrf_name]: csrf_hash
                 }
             }).then(function (data){
